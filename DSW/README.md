@@ -1,7 +1,7 @@
 # SERVER-SIDE WEB DEVELOPMENT
 
 <div align="center">
-<img width = 35% src = "../img/dsw.jpg">
+<img width = 45% src = "../img/dsw.jpg">
 </div>
 
 ## Units / Excersises
