@@ -10,3 +10,6 @@ The following folders store the exercises and practices that we have developed d
 
 - [Introduction Unit](ut0/):
   - Back to python: [Excersise](ut0/max_product.py) / [Test](ut0/test_max_product.py)
+
+- [Unit 1 - Introduction to web development](ut1/):
+  - [Notes of unit (spanish)](ut1/Readme.md)
