@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+    <script src="act4.js"></script>
+</head>
+<body>
+    <p id="first">¿Cuantas islas tiene Canarias?</p>
+    <p id="resultado1"></p>
+    <button id="verdadero" onclick="trueFunct('first', 'resultado1')">8</button>
+    <button id="falso" onclick="falseFunct('first', 'resultado1')">7</button>
+
+    <p id="second">¿Cuantas horas hay en el día?</p>
+    <p id="resultado2"></p>
+    <button id="falso" onclick="falseFunct('second', 'resultado2')">20</button>
+    <button id="verdadero" onclick="trueFunct('second', 'resultado2')">24</button>
+
+    <p id="third">¿Cuantos días hay en una semana?</p>
+    <p id="resultado3"></p>
+    <button id="falso" onclick="falseFunct('third', 'resultado3')">10</button>
+    <button id="verdadero" onclick="trueFunct('third', 'resultado3')">7</button>
+
+    <p id="fourth">¿Cuantas ruedas tiene un coche?</p>
+    <p id="resultado4"></p>
+    <button id="verdadero" onclick="trueFunct('fourth', 'resultado4')">4</button>
+    <button id="falso" onclick="falseFunct('fourth', 'resultado4')">12</button>
+    
+    <p id="fifth">¿Qué se mueve a dos ruedas?</p>
+    <p id="resultado5"></p>
+    <button id="falso" onclick="falseFunct('fifth', 'resultado5')">Camión</button>
+    <button id="verdadero" onclick="trueFunct('fifth', 'resultado5')">Bicicleta</button>
+</body>
+</html>
