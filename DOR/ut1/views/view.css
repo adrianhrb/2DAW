@@ -9,9 +9,10 @@ body {
     background-color: #292929;
 }
 
-nav ul {
+nav {
     display: flex;
-    justify-content: space-between;
-    list-style: none;
+    justify-content: center
+    
 }
+
 
