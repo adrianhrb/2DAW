@@ -26,6 +26,11 @@ class Post(models.Model):
     published = PublishedManager()
 
     class Meta:
+        '''
+        Metadata for the model. Ordering should sort results by default for database
+        Indexerx to create an Index on database
+        '''
+
         ordering = ['-publish']
         indexes = [models.Index(fields=['-publish'])]
 
