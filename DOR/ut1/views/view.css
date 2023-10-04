@@ -1,18 +1,69 @@
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: 'Baloo Paaji 2', cursive;
 }
 
 body {
     background-color: #292929;
+    font-size: 17px;
 }
 
-nav {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+ul {
+    list-style: none;
+}
+
+.container {
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Nav */
+
+.nav-main {
     display: flex;
-    justify-content: center
-    
+    justify-content: space-around;
+    align-items: center;
+    height: 95px;
 }
 
+.nav-brand {
+    width: 95px;
+    margin-left: 20px;
+}
+
+/* Izquierda */
+.nav-main ul {
+    display: flex;
+}
+
+.nav-main ul li {
+    padding: 15px;
+}
+
+.nav-main ul li a {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.nav-main ul li a:hover {
+    border-bottom: 2px solid black;
+    color: #702632;
+}
+
+.nav-main ul.nav-menu {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.util {
+    color: black;
+}
 
