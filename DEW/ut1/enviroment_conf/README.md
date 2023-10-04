@@ -22,93 +22,52 @@ En esta actividad vamos a realiza la instalación y configuración de un entrono
 
 Los navegadores que vamos a seleccionar van a ser:
 
-- Google chrome: Esta es nuestra primera elección de navegador porque es actualmente el navegador nº1 en cuanto a uso en el mundo. En 2021, abarcaba alrededor de un 63,60% del mercado de los navegadores de internet. Este es un motivo de peso, pues teniendo en cuenta este dato, nuestro código va a ser ejecutado en chrome en (aproximadamente) un 60% o más de las ocasiones. Además, chrome ofrece unas herramientas de desarrollador bastante cómodas y modernas para poder trabajar con ellas mientras desarrollamos nuestro código. Por otro lado, Chrome permite una gran variedad de extensiones para descargar que podemos ayudar
+- Google chrome: Esta es nuestra primera elección de navegador porque es actualmente el navegador nº1 en cuanto a uso en el mundo. En 2021, ya abarcaba alrededor de un 63,60% del mercado de los navegadores de internet y en este año 2023, se predice que esa cifra ascenderá a 77.03%. Este es un motivo de peso, pues teniendo en cuenta este dato, nuestro código va a ser ejecutado en chrome en (aproximadamente) un 60% o más de las ocasiones. Además, chrome ofrece unas herramientas de desarrollador bastante cómodas y modernas para poder trabajar con ellas mientras desarrollamos nuestro código. Por otro lado, Chrome permite una gran variedad de extensiones para descargar que nos pueden servir de ayuda para probar funcionalidades o incluso alguna herramienta que nos ayude a desarrollar.
 
-#### **_Objetivos_**. <a name="id2"></a>
+- Firefox: Nuestra segunda elección es Firefox, puesto es el tercer navegador más utilizado justo por detras de Safari. Como Safari trabaja en Mac y se trata de una empresa privada y un software propietario no podemos descargarlo, pero utilizaremos Firefox. En este 2023, se prevé que Firefox ocupará un 7.69% del mercado, una cifra que aparentemente es baja pero es debido a que chrome sigue comiendose el mercado de los navegadores. Además de los motivos ya mencionados en Chrome, Firefox es un navegador muy personalizable que nos permitirá ver como se adapta nuestro código a esas personalizaciones y, también, tiene una muy buena seguridad, aspecto que quizá nos ayude a no tener tanto en cuenta este apartado a la hora de desarrollar.
 
-- Respecto a la parte de control de versiones, los objetivos son afianzar los contenidos teóricos con una práctica para saber como trabajar en un futuro en proyectos más grandes, donde el control de versiones se hace muy importante y el único método eficaz en el mundo del desarrollo para que el trabajo en equipo funcione, como así hemos visto en clase en la parte teórica.
-- Respecto a la parte de documentación, además de las charlas que se tienen en los pull request de la actividad, deberemos etiquetar al final el software y, junto a todo ello, este informe está siendo realizado en markdown, por lo que estamos viendo y aprendiendo distintas formas de realizar la documentación de proyectos.
+En cuanto al editor de texto o IDE:
 
-#### **_Material empleado_**. <a name="id3"></a>
-
-Al tratarse de una práctica sobre el control de versiones y la documentación de proyectos el único material que se ha empleado para la práctica es la plataforma de GitHub para las actividades que se solicitaban.
+- Visual Studio Code: VScode va a ser nuestra elección para el entorno. Uno de los motivos principales y de peso es que, desde el año pasado hemos trabajado con esta herramienta y estamos muy habituados a su uso, lo cual es una ventaja ya que solo nos centraremos en programar y aprender nuevas tecnologías sin incorporar una piedra más en el camino que sería el adaptarnos a un nuevo editor de texto. Además, es un IDE muy desarrollado que cuenta con numerosas extensiones para facilitarnos el trabajo a la hora de desarrollar. Por último, tiene una interfaz muy cómoda en la que podemos consultar mucha información y tener más control sobre lo que está pasando y estamos haciendo.
 
 #### **_Desarrollo_**. <a name="id4"></a>
 
-**User1 : Adrián Herrera**  
-**User2 : Nuhazet Correa**
+En primer lugar, vamos con la instalación de Firefox.
 
-1. En primer lugar, hemos tenido que asignarnos los roles de "User1" y "User2", en este caso yo he sido el usuario 1 y mi compañero, Nuhazet, ha sido el usuario 2. Lo primero que he relizado ha sido la creación del repositorio "original" al que le he añadido el fichero Readme.md junto a la licencia de tipo MIT y además lo he hecho público, todo ello de forma muy sencilla, ya que la interfaz de creación de un repositorio en github permite hacerlo de forma automática seleccionando lo que queramos. Una vez hecho, he añadido los archivos que se adjuntaban con la práctica en local y he subido los cambios.
+1. En primer lugar, vamos a actualizar nuestro sistema operativo (Linux en mi caso) para poner todos los repositorios y paquetes al día. Lanzamos en terminal:
+´´´
+sudo apt-get update
+´´´
 <div align="center">
-<img width = 55% src = "img/1.png">
+<img src = "img/update.png">
 </div>
 
-2. Para trabajar como usuario 2, se tiene que empezar haciendo un fork del proyecto, clonando dicho fork a local.
+2. Para instalar Firefox, utilizaremos los paquetes que nos ofrece la distribución de Linux (En mi caso Xubuntu) y utilizaremos el apt-get para bajarnos el navegador. El comando a lanzar es:
+´´´
+sudo apt-get install firefox
+´´´
 <div align="center">
-<img width = 60% src = "img/2_1.png">
-</br>
-<img width = 50% src = "img/2_2.png">
+<img src = "img/firefox.png">
 </div>
 
-3. Una vez el usuario 2 ha realizado su parte, he abierto un issue en github que se referenció con el número #1 y que hace alusión a los cambios que hay que realizar en el archivo index.html.
+Con estos pasos tan sencillos ya tenemos uno de los dos navegadores que habiamos seleccionado.
+
+Ahora, vamos con la instalación de Google Chrome que también realizaremos en terminal:
+
+1. Google Chrome no viene por defecto en los paquetes y repositorios de linux, por lo que vamos a tener que usar wget para añadir el archivo .deb de chrome y luego lo instalaremos con dpkg. El primer comando que lanzaremos para añadir chrome será:
+´´´
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+´´´
 <div align="center">
-<img width = 40% src = "img/2.png">
+<img src = "img/wget.png">
 </div>
 
-4. Se crea una rama nueva para trabajar sin afectar a la rama principal y se hacen cambios en el proyecto haciendo un PR al usuario 1.
+2. Con el paquete agregado vamos a utilizar dpkg para instalarlo y listo:
+´´´
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+´´´
 <div align="center">
-<img width = 60% src = "img/2_3.png">
-</br>
-<img width = 50% src = "img/2_4.png">
+<img src = "img/wget.png">
 </div>
 
-5. Cuando el usuario 2 ha realizado su parte, es hora de añadir un remoto que apunte al fork de nuestro repositorio original para poder ver y manejar los cambios que se han realizado, y una vez añadida la rama vamos a actualizar los cambios que se hayan hecho en ese fork. Seguiremos los pasos de la imágen:
-<div align="center">
-<img width = 50% src = "img/3.png">
-</div>
-
-6. Con la rama remota (que apunta al repo del usuario2) ya en nuestro local, podemos comprobar los cambios que dicho usuario ha hecho e incluso podemos nosotros añadir más contenido o mejoras que creamos convenientes. Además, como se trata de una rama remota todos los commits que hagamos se van a subir directamente al pull request donde ambos usuarios podremos ver, leer e interactuar para llegar a un acuerdo. Para que todo funcione, cuando queramso subir los cambios deberemos hacer el push indicando el nombre del usuario que ha hecho el fork y el nombre de la rama en la que ha trabajado como vemos en la siguiente imágen [antes de hacer el push, he hecho unos cambios extra en el index.html(usuario1)]
-:
-<div align="center">
-<img width = 50% src = "img/4.png">
-</div>
-
-7. El usuario 2 actualiza su repositorio local con los cambios realizados por el usuario 1 y añade un cambio más.
-<div align="center">
-<img width = 60% src = "img/2_5.png">
-</br>
-<img width = 50% src = "img/2_5_1.png">
-</div>
-
-8. Con los cambios finales confirmados, es hora de actualizar nuestra rama main con los cambios realizados en esa rama remota. Para ello, yo como usuario 1 puedo hacerlo de una forma sencilla. Debo colocarme en la rama main y hacer un git pull, y con ello ya tendría todos los cambios que hemos acordado en la rama main. Una vez hecho esto, toca cerrar el pull request y cerrar la tarea con un comentario.
-<div align="center">
-<img width = 50% src = "img/6.png">
-</div>
-
-9. Se añade la rama remota apuntando al repositorio del usuario 1 y se actualiza el main local con el main de dicho repositorio. Finalmente se usa git push para actualizar el repositorio remoto del usuario 2.
-<div align="center">
-<img width = 60% src = "img/2_6.png">
-</div>
-
-10. Ahora, vamos a pasar a la parte en la que simularemos o "forzaremos" un conflicto intencionadamente para solucionarlo. Para ello, yo como user1 haré un cambio en un archivo y le haré git add + git commit pero no los subiré al remoto para forzar ese conflicto.
-<div align="center">
-<img width = 50% src = "img/8.png">
-</div>
-
-11. Por parte del usuario 2 se crea una rama nueva y se realizan cambios sobre la misma.
-<div align="center">
-<img width = 50% src = "img/2_7.png">
-</div>
-
-12. Ahora, con los cambios de user2 me toca traer los cambios a mi local. Me saltará un error porque hay en el mismo archivo, la misma cosa modificada. Ahora, para solucionar el conflicto iremos a dicho archivo y nos quedaremos con los cambios que ha hecho el user2.
-<div align="center">
-<img width = 110% src = "img/9.png">
-</div>
-
-13. Después de arreglar el conflicto, haremos un commit especificando lo que hemos hecho y nos traeremos los cambios de esa rama a la main y le crearemos una tag al repo para tenerlo identificado.
-
-- No hemos encontrado ninguna dificultad a destacar. Si que hemos tenido algunos problemas a la hora de subir los cambios a la rama main pero han sido por errores que hemos cometido y los hemos conseguido resolver volviendo hacia atrás viendo los pasos que habiamos seguido y dandonos cuenta de esos errores.
-
-#### **_Conclusiones_**. <a name="id5"></a>
-
-User 2: De esta tarea podemos aprender como manejar git a nivel general. Como idea para mejorar aún más la práctica se podría añadir más contenido al usuario 2 ya que realiza menos comandos. También se podría en algún punto de la práctica cambiar los roles haciendo que el usuario 2 crease un repositorio y así trabajar las dos partes por igual.
+Con estos sencillos pasos, ya tenemos ambos navegadores instalados. Linux ofrece unas formas muy ágiles para las instalaciones de este tipo a través de terminal.
