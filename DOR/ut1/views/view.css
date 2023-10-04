@@ -46,6 +46,7 @@ ul {
 
 .nav-main ul li {
     padding: 15px;
+    transition: all 0.25ms ease;
 }
 
 .nav-main ul li a {
