@@ -86,23 +86,141 @@ ul {
 }
 
 .content {
-    margin-top: 300px;
-    height: 800px;
-    background-color: red;
+    margin-top: 50px;
+    height: 1095px;
     display: flex;
     align-items: center;
 }
 
 .content-img {
     height: 70%;
-    background-color: blue;
     width: 30%;
     margin-left: 100px;
 }
 
+.content-img img {
+    width: 100%;
+}
+
 .products {
-    background-color: aqua;
     width: 70%;
     height: 70%;
-    margin-right: 100px;
+    display: grid;
+    margin-left: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.product1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    transition: all 250ms ease;
+}
+
+.product2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product4{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product5 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product6 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product1:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product2:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product3:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product4:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product5:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product6:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+footer {
+    background-color: rgb(22, 22, 22);
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+}
+
+footer div {
+    margin: 100px;
 }
