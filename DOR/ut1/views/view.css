@@ -85,6 +85,15 @@ ul {
     width: 100%;
 }
 
+.imag {
+    transition: box-shadow 0.45s ease;
+}
+
+.imag:hover {
+    opacity: 0.75;
+    box-shadow: 10px 0px 20px black;
+}
+
 .content {
     margin-top: 50px;
     height: 1095px;
