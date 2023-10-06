@@ -70,4 +70,6 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 <img src = "img/wget.png">
 </div>
 
-Con estos sencillos pasos, ya tenemos ambos navegadores instalados. Linux ofrece unas formas muy ágiles para las instalaciones de este tipo a través de terminal.
+Con estos sencillos pasos, ya tenemos ambos navegadores instalados. Linux ofrece unas formas muy ágiles para las instalaciones de este tipo a través de terminal. Ahora vamos a pasar a la instalción del editor de código que en nuestro caso será VScode.  
+
+La instalación será muy sencilla, solo tendremos que seguir los pasos que nos indica la página de VScode. Simplemente descargaremos el archivo y lo instalaremos.
