@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rombo de emoticonos</title>
+</head>
+<body>
+    <p>Cuantas filas quieres poner: <input type="number" name="rows" id="rows"></p>
+    <br>
+    <input type="button" value="generar" onclick="dibujarRombo()">
+    <div id="rombo" style="text-align: center"></div>
+    
+    <script>
+            function dibujarRombo() {
+                filas = document.getElementById('rows').value
+                let output = '';
+                
+                //Parte creciente del rombo:
+                for (let i = 1; i <= filas; i++){
+                    let linea = '';
+                    for (let j = 1; j <= 2 * i - 1; j++) {
+                        linea += '*';
+                    }
+                    output += linea + '<br>';
+                }
+                
+                //Parte decreciente del rombo:
+                for (let i = filas - 1; i >= 1; i--) {
+                    let linea = '';
+                    for (let j = 1; j <= 2 * i - 1; j++) {
+                        linea += '*';
+                    }
+                    output += linea + '<br>';
+                }
+                document.getElementById('rombo').innerHTML = output;
+            } 
+    </script>
+</body>
+</html>
