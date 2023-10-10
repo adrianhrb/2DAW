@@ -31,7 +31,7 @@ ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 95px;
+    height: 115px;
 }
 
 .nav-brand {
@@ -68,3 +68,168 @@ ul {
     color: black;
 }
 
+.showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+}
+
+.img-elements {
+    width: 90%;
+    height: 90%;
+    display: flex;
+}
+
+.img-elements img {
+    width: 100%;
+}
+
+.imag {
+    transition: box-shadow 0.45s ease;
+}
+
+.imag:hover {
+    opacity: 0.75;
+    box-shadow: 10px 0px 20px black;
+}
+
+.content {
+    margin-top: 50px;
+    height: 1095px;
+    display: flex;
+    align-items: center;
+}
+
+.content-img {
+    height: 70%;
+    width: 30%;
+    margin-left: 100px;
+}
+
+.content-img img {
+    width: 100%;
+}
+
+.products {
+    width: 70%;
+    height: 70%;
+    display: grid;
+    margin-left: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.product1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    transition: all 250ms ease;
+}
+
+.product2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product4{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product5 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product6 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width:200px;
+    height:200px;
+    background-color: green;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.product1:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product2:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product3:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product4:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product5:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+.product6:hover {
+    background-color: grey;
+    box-shadow: 10px 10px 20px black;
+}
+
+footer {
+    background-color: rgb(22, 22, 22);
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+}
+
+footer div {
+    margin: 100px;
+}
