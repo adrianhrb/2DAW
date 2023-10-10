@@ -8,7 +8,7 @@ from django.views.decorators.http import require_POST
 from taggit.models import Tag
 
 from .forms import CommentForm, EmailPostForm
-from .models import Comment, Post
+from .models import Post
 
 
 @require_POST
