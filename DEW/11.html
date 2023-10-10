@@ -9,12 +9,27 @@
 <body>
     <h1>Te calculo los n primeros números de Fibonacci</h1>
     <input type="number" placeholder="N aquí" id="number">
-    <input type="button" value="Calcular">
+    <input type="button" value="Calcular" onclick="fiboCalculator()">
+    <p id="result">
 
+    </p>
     <script>
-        function fiboCalculator
-        for (i=0; i <= number; i++) {
-            
+        function fiboCalculator(){
+            var number = document.getElementById('number').value
+            var i = 0
+            var j = 1
+            var res = 0
+            var finalRes = []
+            finalRes.push(i)
+            finalRes.push(j)
+            number = number - 2
+            for (cont=0; cont < number; cont++) {
+                res = i + j
+                finalRes.push(res)
+                i = j
+                j = res
+            }
+        document.getElementById('result').innerHTML = finalRes.join(',')
         }
     </script>
 </body>

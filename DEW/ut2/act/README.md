@@ -262,5 +262,38 @@ function tipsCalculator() {
 Un modificador de utilidad para esta tarea es el ".push()", el cual permite añadir nuevos elementos a un array cualquiera previamente definido.
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci</title>
+  </head>
+  <body>
+    <h1>Te calculo los n primeros números de Fibonacci</h1>
+    <input type="number" placeholder="N aquí" id="number" />
+    <input type="button" value="Calcular" onclick="fiboCalculator()" />
+    <p id="result"></p>
+    <script>
+      function fiboCalculator() {
+        var number = document.getElementById("number").value;
+        var i = 0;
+        var j = 1;
+        var res = 0;
+        var finalRes = [];
+        finalRes.push(i);
+        finalRes.push(j);
+        number = number - 2;
+        for (cont = 0; cont < number; cont++) {
+          res = i + j;
+          finalRes.push(res);
+          i = j;
+          j = res;
+        }
+        document.getElementById("result").innerHTML = finalRes.join(",");
+      }
+    </script>
+  </body>
+</html>
 ```
