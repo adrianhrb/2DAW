@@ -6,15 +6,13 @@
 
 **_Nombre:_** Adrián Herrera Brito
 
-**_Curso:_** 2º de Ciclo Superior de Desarrollo de Aplicaciones Web.
+**_Curso:_** 2º de Ciclo Superior de Desarrollo de Aplicaciones Web. Desarrollo en entorno Cliente
 
 ### ÍNDICE
 
 - [Introducción](#id1)
-- [Objetivos](#id2)
-- [Material empleado](#id3)
 - [Desarrollo](#id4)
-- [Conclusiones](#id5)
+- [Validador](#id5)
 
 #### **_Introducción_**. <a name="id1"></a>
 
@@ -35,17 +33,21 @@ En cuanto al editor de texto o IDE:
 En primer lugar, vamos con la instalación de Firefox.
 
 1. En primer lugar, vamos a actualizar nuestro sistema operativo (Linux en mi caso) para poner todos los repositorios y paquetes al día. Lanzamos en terminal:
-´´´
+
+```
 sudo apt-get update
-´´´
+```
+
 <div align="center">
 <img src = "img/update.png">
 </div>
 
 2. Para instalar Firefox, utilizaremos los paquetes que nos ofrece la distribución de Linux (En mi caso Xubuntu) y utilizaremos el apt-get para bajarnos el navegador. El comando a lanzar es:
-´´´
+
+```
 sudo apt-get install firefox
-´´´
+```
+
 <div align="center">
 <img src = "img/firefox.png">
 </div>
@@ -55,21 +57,75 @@ Con estos pasos tan sencillos ya tenemos uno de los dos navegadores que habiamos
 Ahora, vamos con la instalación de Google Chrome que también realizaremos en terminal:
 
 1. Google Chrome no viene por defecto en los paquetes y repositorios de linux, por lo que vamos a tener que usar wget para añadir el archivo .deb de chrome y luego lo instalaremos con dpkg. El primer comando que lanzaremos para añadir chrome será:
-´´´
+
+```
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-´´´
+```
+
 <div align="center">
 <img src = "img/wget.png">
 </div>
 
 2. Con el paquete agregado vamos a utilizar dpkg para instalarlo y listo:
-´´´
+
+```
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-´´´
+```
+
 <div align="center">
 <img src = "img/wget.png">
 </div>
 
-Con estos sencillos pasos, ya tenemos ambos navegadores instalados. Linux ofrece unas formas muy ágiles para las instalaciones de este tipo a través de terminal. Ahora vamos a pasar a la instalción del editor de código que en nuestro caso será VScode.  
+Con estos sencillos pasos, ya tenemos ambos navegadores instalados. Linux ofrece unas formas muy ágiles para las instalaciones de este tipo a través de terminal. Ahora vamos a pasar a la instalción del editor de código que en nuestro caso será VScode.
 
-La instalación será muy sencilla, solo tendremos que seguir los pasos que nos indica la página de VScode. Simplemente descargaremos el archivo y lo instalaremos.
+La instalación será muy sencilla, solo tendremos que seguir los pasos que nos indica la página de VScode. Simplemente descargaremos el archivo según nuestra distribución en la propia página y ese archivo que se nos descarga será el instalador. Lo ejecutamos haciendo click en él y simplemente seguiremos los pasos que el instalador nos dice. Nos preguntará cosas típicas como dónde queremos guardar la aplicación (en qué directorio) y alguna pequeña configuración. Siguiendo estos sencillos pasos, ya tenemos todo lo que se solicita instalado y listo para usar.
+
+#### **_Validador_**. <a name="id5"></a>
+
+Ahora, vamos a realizar la validación de la página de google. Para ello, pasaremos su código fuente al validador de W3C, que nos dirá los errores y problemas encontrados respecto al estándar que se marca. Para obtener el código fuente, es tan sencillo como pulsar botón derecho en la página de google y darle al botón de ver código fuente, y de ahí copiaremos ese código para introducirlo en el validador. El código obtenido es el siguiente:
+
+```html
+<!DOCTYPE html>
+<html dir="ltr" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nueva pestaña</title>
+    <style>
+      body {
+        background: #445760;
+        margin: 0;
+      }
+
+      #backgroundImage {
+        border: none;
+        height: 100%;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+      }
+
+      [show-background-image] #backgroundImage {
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="backgroundImage" src=""></iframe>
+    <ntp-app></ntp-app>
+    <script type="module" src="new_tab_page.js"></script>
+    <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css" />
+    <link rel="stylesheet" href="chrome://theme/colors.css?sets=ui,chrome" />
+    <link rel="stylesheet" href="shared_vars.css" />
+  </body>
+</html>
+```
+
+Sorprendentemente, el validador nos da un error en una parte del código. Resulta extraño al tratarse de una página de una empresa tan importante como google que abarca gran parte del mercado tecnológico. El error salta en la pimera de las etiquetas en el body, en la etiqueta iframe. El validador nos dice que uno de los atributos de esa etiqueta, el src, está vacío. Ese atributo src, en el contexto de la etiqueta iframe sirve para indicar la fuente del contenido que se tendría que renderizar dentro de la etiqueta, y en este atributo se suele indicar un enlace a otra página o una ruta válida a algún contenido de internet. Para solucionar el error, bastaría con indicar alguna ruta dentro de ese atributo.
+
+<div align="center">
+<img src = "img/image.png" width="45%">
+</div>
+
+Para solucionar el error, bastaría con pasar una url a ese atributo y el validador nos daría que todo está correcto
