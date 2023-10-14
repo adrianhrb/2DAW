@@ -1,0 +1,1293 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2023-10-03T14:40:28.405Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "PyCon Canarias 2023",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2023-10-03T16:47:25.228Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "PyCon Canarias 2023",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2023-10-04T08:05:35.244Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Prueba post en draft",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2023-10-04T08:05:57.729Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Prueba de 2do post en draft",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2023-10-04T08:07:19.446Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "adrian",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2023-10-04T08:07:47.312Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "adrian",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2023-10-04T08:08:15.338Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Nuevo post publicado por otro usuario",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2023-10-04T19:04:33.652Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Prueba de post en clase",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2023-10-04T19:04:54.706Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "Este es un nuevo post hecho en clase",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2023-10-10T08:37:53.070Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Comment by Comentario de prueba on Este es un nuevo post hecho en clase",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2023-10-10T14:09:08.413Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "Este es un nuevo post hecho en clase",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2023-10-10T14:09:16.382Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Prueba de post en clase",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2023-10-10T14:09:28.891Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Nuevo post publicado por otro usuario",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2023-10-10T14:09:39.885Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Prueba de 2do post en draft",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2023-10-10T14:41:04.864Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "Este es un nuevo post hecho en clase",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2023-10-10T14:41:04.880Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Prueba de post en clase",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2023-10-10T14:41:04.894Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Nuevo post publicado por otro usuario",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2023-10-10T14:41:04.906Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Prueba de 2do post en draft",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2023-10-10T14:41:04.915Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Prueba post en draft",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2023-10-10T14:41:42.548Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "Concierto en La Laguna",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2023-10-10T14:41:51.688Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "PyCon Canarias 2023",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2023-10-10T14:42:28.955Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "9",
+    "object_repr": "Clase más numerosa de la historia",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2023-10-10T14:42:36.623Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "PyCon Canarias 2023",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2023-10-10T14:43:10.892Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "10",
+    "object_repr": "Concierto de One Direction",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2023-10-10T14:43:52.882Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "11",
+    "object_repr": "Elon Musk planea lanzar más starlinks",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2023-10-10T14:44:02.106Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "PyCon Canarias 2023",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2023-10-10T14:44:41.856Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "11",
+    "object_repr": "Elon Musk planea lanzar más starlinks",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2023-10-10T14:44:47.710Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "PyCon Canarias 2023",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2023-10-10T15:24:11.222Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "12",
+    "object_repr": "Tesla anuncia su cybertruck",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2023-10-10T15:26:15.636Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "12",
+    "object_repr": "Tesla anuncia su cybertruck",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2023-10-10T15:26:55.188Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "12",
+    "object_repr": "Tesla anuncia su cybertruck",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2023-10-10T15:28:12.727Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "12",
+    "object_repr": "Tesla anuncia su cybertruck",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2023-10-14T13:10:38.871Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "localhost:8000",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add post",
+    "content_type": 7,
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change post",
+    "content_type": 7,
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete post",
+    "content_type": 7,
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view post",
+    "content_type": 7,
+    "codename": "view_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add comment",
+    "content_type": 8,
+    "codename": "add_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change comment",
+    "content_type": 8,
+    "codename": "change_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete comment",
+    "content_type": 8,
+    "codename": "delete_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view comment",
+    "content_type": 8,
+    "codename": "view_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add tag",
+    "content_type": 9,
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change tag",
+    "content_type": 9,
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete tag",
+    "content_type": 9,
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view tag",
+    "content_type": 9,
+    "codename": "view_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add tagged item",
+    "content_type": 10,
+    "codename": "add_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change tagged item",
+    "content_type": 10,
+    "codename": "change_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete tagged item",
+    "content_type": 10,
+    "codename": "delete_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view tagged item",
+    "content_type": 10,
+    "codename": "view_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add site",
+    "content_type": 11,
+    "codename": "add_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change site",
+    "content_type": 11,
+    "codename": "change_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete site",
+    "content_type": 11,
+    "codename": "delete_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view site",
+    "content_type": 11,
+    "codename": "view_site"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$7LfIYy9N8CxzHqW7LyQC3a$FMFQ+BXASdj/wdUSpMCcdm/Xty3RNRN4H394ZabR3io=",
+    "last_login": "2023-10-04T08:05:08.180Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-10-03T14:33:05.445Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$6d0TuHnrWvV1TIuaD0Dclq$o4KvgaiwJC6LoWCdnrSfh22H4CQU1MeMA/qkziCs0jk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "adrian",
+    "first_name": "Adrian",
+    "last_name": "Herrera",
+    "email": "adrian@adrian.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-10-04T08:07:19Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "blog",
+    "model": "post"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "blog",
+    "model": "comment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "taggit",
+    "model": "tag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "taggit",
+    "model": "taggeditem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "sites",
+    "model": "site"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "5v0r6by2931x67qcts7ol7dgttqobw7c",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEMpTxcuvcbyDAMUjU0Ke3K-O_apAvd3nPOfYmI21rj1nmJUxZnAeL0uyWkB7cd5Du22yxpbusyJbkr8qBdXufMz8vh_h1U7PVbK88cwKExHjWCMlqTGxMOhRR4xwXdCFQY7BCKSQm1t5YCOa3ABALx_gDaHzeV:1qnwsW:mhXcC_YVIDlg6RR36MuGMM9jd-JA4oCRlykvSnm3h8Y",
+    "expire_date": "2023-10-18T08:05:08.188Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "i2wa7w45pnfmds0q24oc1a53ds31t93b",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEMpTxcuvcbyDAMUjU0Ke3K-O_apAvd3nPOfYmI21rj1nmJUxZnAeL0uyWkB7cd5Du22yxpbusyJbkr8qBdXufMz8vh_h1U7PVbK88cwKExHjWCMlqTGxMOhRR4xwXdCFQY7BCKSQm1t5YCOa3ABALx_gDaHzeV:1qngUB:EgW7yVKIi5OBIsYLBwfLOvleS9q_OtrXLU9kibSreCg",
+    "expire_date": "2023-10-17T14:34:55.104Z"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "title": "PyCon Canarias 2023",
+    "slug": "pycon-canarias-2023",
+    "author": 1,
+    "body": "PyCon 2023 se celebra en Canarias",
+    "publish": "2023-10-03T14:38:22Z",
+    "created": "2023-10-03T14:40:28.400Z",
+    "updated": "2023-10-10T14:44:47.702Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 8,
+  "fields": {
+    "title": "Concierto en La Laguna",
+    "slug": "concierto-en-la-laguna",
+    "author": 1,
+    "body": "Esto es un concierto que se va a hacer en La Laguna",
+    "publish": "2023-10-10T14:41:07Z",
+    "created": "2023-10-10T14:41:42.530Z",
+    "updated": "2023-10-10T14:41:42.530Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 9,
+  "fields": {
+    "title": "Clase más numerosa de la historia",
+    "slug": "clase-mas-numerosa-de-la-historia",
+    "author": 2,
+    "body": "Clase más numerosa de la historia en el IES pto de 2º daw",
+    "publish": "2023-10-10T14:41:53Z",
+    "created": "2023-10-10T14:42:28.942Z",
+    "updated": "2023-10-10T14:42:28.942Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 10,
+  "fields": {
+    "title": "Concierto de One Direction",
+    "slug": "concierto-de-one-direction",
+    "author": 1,
+    "body": "Concierto de one direction en Tenerife",
+    "publish": "2023-10-10T14:42:38Z",
+    "created": "2023-10-10T14:43:10.874Z",
+    "updated": "2023-10-10T14:43:10.874Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 11,
+  "fields": {
+    "title": "Elon Musk planea lanzar más starlinks",
+    "slug": "elon-musk-planea-lanzar-mas-starlinks",
+    "author": 2,
+    "body": "Elon Musk planea lanzar más starlinks al espacio",
+    "publish": "2023-10-10T14:43:13Z",
+    "created": "2023-10-10T14:43:52.860Z",
+    "updated": "2023-10-10T14:44:41.848Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 12,
+  "fields": {
+    "title": "Tesla anuncia su cybertruck",
+    "slug": "tesla-anuncia-su-cybertruck",
+    "author": 1,
+    "body": "## Tesla finalmente presenta fecha de salida para su Cybertruck\r\n**Y es más pronto de lo que parece**  \r\n\r\nLas posibles fechas de salida son:  \r\n\r\n* 12 de octubre\r\n* 6 de noviembre\r\n* 4 de diciembre  \r\n\r\nHere is a [link to tesla website](https://www.tesla.com/es_es)",
+    "publish": "2023-10-10T15:21:54Z",
+    "created": "2023-10-10T15:24:11.202Z",
+    "updated": "2023-10-10T15:28:12.721Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 7,
+  "fields": {
+    "post": 11,
+    "name": "Adrián",
+    "email": "adrian.herrera.br@gmail.com",
+    "body": "Como mola a ver si los vemos uno de estos días",
+    "created": "2023-10-10T15:16:09.128Z",
+    "updated": "2023-10-10T15:16:09.128Z",
+    "active": true
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 8,
+  "fields": {
+    "post": 1,
+    "name": "Adrian",
+    "email": "adrian@adrian.com",
+    "body": "Qué ganas de que llegue el día!",
+    "created": "2023-10-10T15:16:28.134Z",
+    "updated": "2023-10-10T15:16:28.134Z",
+    "active": true
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 9,
+  "fields": {
+    "post": 1,
+    "name": "Pepe",
+    "email": "pepe@pepe.com",
+    "body": "Vaya que ilusión",
+    "created": "2023-10-10T15:16:43.666Z",
+    "updated": "2023-10-10T15:16:43.667Z",
+    "active": true
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 1,
+  "fields": {
+    "name": "web",
+    "slug": "web"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 2,
+  "fields": {
+    "name": "programacion",
+    "slug": "programacion"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 3,
+  "fields": {
+    "name": "mundo",
+    "slug": "mundo"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 4,
+  "fields": {
+    "name": "continente",
+    "slug": "continente"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 5,
+  "fields": {
+    "name": "tenerife",
+    "slug": "tenerife"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 6,
+  "fields": {
+    "name": "musica",
+    "slug": "musica"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 7,
+  "fields": {
+    "name": "python",
+    "slug": "python"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 8,
+  "fields": {
+    "name": "pop",
+    "slug": "pop"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 9,
+  "fields": {
+    "name": "espacio",
+    "slug": "espacio"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 10,
+  "fields": {
+    "name": "tecnología",
+    "slug": "tecnología"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 11,
+  "fields": {
+    "name": "tesla",
+    "slug": "tesla"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 12,
+  "fields": {
+    "name": "coches",
+    "slug": "coches"
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 9,
+  "fields": {
+    "tag": 5,
+    "content_type": 7,
+    "object_id": 8
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 10,
+  "fields": {
+    "tag": 6,
+    "content_type": 7,
+    "object_id": 8
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 11,
+  "fields": {
+    "tag": 2,
+    "content_type": 7,
+    "object_id": 1
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 12,
+  "fields": {
+    "tag": 7,
+    "content_type": 7,
+    "object_id": 1
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 13,
+  "fields": {
+    "tag": 1,
+    "content_type": 7,
+    "object_id": 9
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 14,
+  "fields": {
+    "tag": 2,
+    "content_type": 7,
+    "object_id": 9
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 15,
+  "fields": {
+    "tag": 8,
+    "content_type": 7,
+    "object_id": 10
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 16,
+  "fields": {
+    "tag": 6,
+    "content_type": 7,
+    "object_id": 10
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 17,
+  "fields": {
+    "tag": 9,
+    "content_type": 7,
+    "object_id": 11
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 20,
+  "fields": {
+    "tag": 11,
+    "content_type": 7,
+    "object_id": 12
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 21,
+  "fields": {
+    "tag": 12,
+    "content_type": 7,
+    "object_id": 12
+  }
+},
+{
+  "model": "sites.site",
+  "pk": 1,
+  "fields": {
+    "domain": "localhost:8000",
+    "name": "localhost:8000"
+  }
+}
+]
