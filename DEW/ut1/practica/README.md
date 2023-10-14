@@ -84,48 +84,10 @@ La instalación será muy sencilla, solo tendremos que seguir los pasos que nos 
 
 Ahora, vamos a realizar la validación de la página de google. Para ello, pasaremos su código fuente al validador de W3C, que nos dirá los errores y problemas encontrados respecto al estándar que se marca. Para obtener el código fuente, es tan sencillo como pulsar botón derecho en la página de google y darle al botón de ver código fuente, y de ahí copiaremos ese código para introducirlo en el validador. El código obtenido es el siguiente:
 
-```html
-<!DOCTYPE html>
-<html dir="ltr" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Nueva pestaña</title>
-    <style>
-      body {
-        background: #445760;
-        margin: 0;
-      }
-
-      #backgroundImage {
-        border: none;
-        height: 100%;
-        pointer-events: none;
-        position: fixed;
-        top: 0;
-        visibility: hidden;
-        width: 100%;
-      }
-
-      [show-background-image] #backgroundImage {
-        visibility: visible;
-      }
-    </style>
-  </head>
-  <body>
-    <iframe id="backgroundImage" src=""></iframe>
-    <ntp-app></ntp-app>
-    <script type="module" src="new_tab_page.js"></script>
-    <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css" />
-    <link rel="stylesheet" href="chrome://theme/colors.css?sets=ui,chrome" />
-    <link rel="stylesheet" href="shared_vars.css" />
-  </body>
-</html>
-```
-
-Sorprendentemente, el validador nos da un error en una parte del código. Resulta extraño al tratarse de una página de una empresa tan importante como google que abarca gran parte del mercado tecnológico. El error salta en la pimera de las etiquetas en el body, en la etiqueta iframe. El validador nos dice que uno de los atributos de esa etiqueta, el src, está vacío. Ese atributo src, en el contexto de la etiqueta iframe sirve para indicar la fuente del contenido que se tendría que renderizar dentro de la etiqueta, y en este atributo se suele indicar un enlace a otra página o una ruta válida a algún contenido de internet. Para solucionar el error, bastaría con indicar alguna ruta dentro de ese atributo.
+Sorprendentemente, el validador nos da hasta 140 errores en ese código de google como veremos en la imagen. Muchos de los errores vienen del CSS donde hay problemas con la sintaxis, y muchos de los otros problemas viene en la declaración de atributos en el HTML. Aparecen también algunos problemas con elementos del HTML como la etiqueta style. Resulta sorprendente ver que una página como google tiene tantos errores, pero tiene una explicación. Probablemente, google esté aplicando diferentes técnicas para hacer un navegador rápido y eficiente y eso implica saltarse algunos de los estándares web. Además, google está en constante cambio y actualización, cosa que afecta también al cumplimiento de esos estándares web. Al fin y al cabo, la empresa busca hacer el mejor producto posible para las personas "normales" sin importar si se cumplen o no al 100% las reglas del W3C, ya que las personas que no estén interesadas en el tema o no se dediquen a ello nunca van a saber que esos estándares no se están cumpliendo.
 
 <div align="center">
 <img src = "img/image.png" width="45%">
 </div>
 
-Para solucionar el error, bastaría con pasar una url a ese atributo y el validador nos daría que todo está correcto
+La conclusión que podemos extraer de esta parte de la práctica es que el validador del W3C es una buena herramienta para usar de guía y comprobar si nuestro código cumple los estándares web, pero no es estrictamente obligatorio cumplirlos todos, siempre y cuando sepamos lo que estamos haciendo, podemos obviar alguna de esas reglas para dar la mejor calidad posible al usuario.
