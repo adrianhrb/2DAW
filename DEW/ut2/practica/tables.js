@@ -5,20 +5,20 @@ function tabla7() {
     }
   }
   
-  function tablaSuma8() {
-    var i = 0;
-    while (i <= 10) {
-      var res = 8 + i;
-      console.log("8 + " + i + " = " + res);
-      i++;
-    }
+function tablaSuma8() {
+  var i = 0;
+  while (i <= 10) {
+    var res = 8 + i;
+    console.log("8 + " + i + " = " + res);
+    i++;
   }
-  
-  function tablaDivide9() {
-    var i = 0;
-    do {
-      var res = 9 / i;
-      console.log("9 / " + i + " = " + res);
-      i++;
-    } while (i <= 10);
-  }
+}
+
+function tablaDivide9() {
+  var i = 0;
+  do {
+    var res = 9 / i;
+    console.log("9 / " + i + " = " + res);
+    i++;
+  } while (i <= 10);
+}
