@@ -35,6 +35,8 @@ function tablaDivide9() {
 }
 ```
 
+En el primer bucle, el de la tabla del 7 hemos utilizado un bucle (dentro de una función) clásico. El segundo bucle, es a través de un while, en el que definimos la i fuera del bucle y vamos aumentando su valor dentro y dentendremos el bucle cuando la i sea mayor que el 10. El último es bastante similar al segundo pero lo aplicamos con un do -> while. [El archivo JavaScript aquí](./tables.js)
+
 2. Sabiendo que cuando desplazamos 1 bit a la derecha dividimos un entero por 2 y cuando lo desplazamos a la izquierda estamos multiplicando por 2; configurar tu web para que también imprima el resultado de las siguientes operaciones empleando desplazamiento de bits:
 
    - 125 / 8 -> 125 >> 3
