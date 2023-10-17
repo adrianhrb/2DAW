@@ -74,7 +74,7 @@ function calculate(operation) {
 }
 ```
 
-Pero la anidación de if/else puede llegar a ser engorrosa de leer y, eso significa que en algún punto será dificil de mantener, por lo que para la solución final se ha utilizado un switch, que además de permitir una lectura más sencilla, también permitiría añadir más condiciones en un futuro sin seguir llenando el código de llaves y paréntesis. Además de eso, para no estar creando la variable en cada una de las condiciones, la decisión que hemos tomado ha sido crear la variable fuera y darle como valor undefined, para así luego asignarle el valor del resultado de la operación que toque.
+Pero la anidación de if/else puede llegar a ser engorrosa de leer y, eso significa que en algún punto será dificil de mantener, por lo que para la solución final se ha utilizado un switch, que además de permitir una lectura más sencilla, también permitiría añadir más condiciones en un futuro sin seguir llenando el código de llaves y paréntesis. Además de eso, para no estar creando la variable en cada una de las condiciones, la decisión que hemos tomado ha sido crear la variable fuera y darle como valor undefined, para así luego asignarle el valor del resultado de la operación que toque. El código resultante:
 
 ```javascript
 function calculate(operation) {
@@ -103,3 +103,8 @@ function calculate(operation) {
   document.getElementById("resultado").value = result;
 }
 ```
+
+Estos son los códigos en javascript. Para seguir el enunciado de la práctica los pondremos dentro de las etiquetas script del HTML, los archivos resultantes:
+
+- [Opción con anidación de if / else](./ifelse.html)
+- [Opción con condicional switch](./switch.html)
