@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana principal</title>
+</head>
+<body>
+    <p id="nombre">El nombre es: <input type="text" readonly></p>
+    <p id="nombre">El apellido es: <input type="text" readonly></p>
+    <p id="nombre">El número es: <input type="text" readonly></p>
+    <input type="button" value="Rellenar form" onclick="openFormWindow()">
+    <script>
+        function openFormWindow() {
+            window.open('sub.html', 'form', 'height=700px,width=600px')
+        }
+    </script>
+</body>
+</html>
