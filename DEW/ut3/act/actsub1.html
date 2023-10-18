@@ -16,11 +16,22 @@
     </form>
 
     <script>
+        function confirmData(){
+            if (window.confirm('Enviar datos?')){
+                sendData()
+            }
+            else {
+                alert('No se enviaran los datos')
+            }
+        }
         function sendData(){
-            var name = document.getElementById('name')
-            var surname = document.getElementById('surname')
-            var number = document.getElementById('number')
-            window.opener
+            var name = document.getElementById('name').value
+            var surname = document.getElementById('surname').value
+            var number = document.getElementById('num').value
+            window.opener.document.getElementById('nombre').value = name
+            window.opener.document.getElementById('apellido').value = surname
+            window.opener.document.getElementById('numero').value = number
+            window.close()
         }
     </script>
 </body>
