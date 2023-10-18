@@ -9,7 +9,7 @@
 }
 #red {
     background-color: red;
-    height: 300px;
+    height: 268px;
 }
 
 #pinkf {
@@ -43,4 +43,10 @@
 #footer {
     background-color: green;
     height: 20px;
+}
+
+@media (max-width:767px) {
+    #red {
+        height: 30px;
+    }
 }
