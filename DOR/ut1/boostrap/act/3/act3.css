@@ -1,0 +1,9 @@
+#header {
+    background-color: green;
+    height: 40px;
+}
+
+#fila1 div.col #f {
+    background-color: steelblue;
+    border: 1px solid black;
+}
