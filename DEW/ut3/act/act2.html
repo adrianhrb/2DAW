@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambia el título</title>
+</head>
+<body>
+    <form>
+        <h1>Elige el título de esta página</h1>
+        <input type="text" name="ntitle" id="ntitle">
+    </form>
+    <br>
+    <input type="button" value="Cambiar título" onclick="changeTitle()">
+    <script>
+        function changeTitle(){
+            var newTitle = document.getElementById('ntitle').value
+            document.title = newTitle
+        }
+    </script>
+    
+</body>
+</html>

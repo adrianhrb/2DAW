@@ -11,9 +11,12 @@
     <form>
         <p>Dime tu nombre: <input type="text" id="name"></p>
         <p>Dime tu apellido: <input type="text" id="surname"></p>
-        <p>Dime tu número favorito: <input type="number" id="num"></p>
-        <input type="button" value="Enviar datos" onclick="confirmData()">
+        <p>Dime tu calle: <input type="text" id="street"></p>
+        <p>Dime tu Código postal: <input type="number" id="num"></p>
+        <p>Dime tu municipio: <input type="text" id="mun"></p>
     </form>
+    <br>
+    <input type="button" value="Enviar datos" onclick="confirmData()">
 
     <script>
         function confirmData(){
@@ -27,10 +30,13 @@
         function sendData(){
             var name = document.getElementById('name').value
             var surname = document.getElementById('surname').value
-            var number = document.getElementById('num').value
+            var postal = document.getElementById('num').value
+            var street = document.getElementById('street').value
+            var mun = document.getElementById('mun').value
+            var direction = 'Calle ' + street + ', en ' + mun + ' CP: ' + postal
             window.opener.document.getElementById('nombre').value = name
             window.opener.document.getElementById('apellido').value = surname
-            window.opener.document.getElementById('numero').value = number
+            window.opener.document.getElementById('direccion').value = direction
             window.close()
         }
     </script>
