@@ -3,7 +3,39 @@
     height: 40px;
 }
 
-#fila1 div.col #f {
+#f {
     background-color: steelblue;
-    border: 1px solid black;
+    border: 2px solid black;
+}
+
+#large-element {
+    background-color: aqua;
+    border: 2px solid black;
+}
+
+#la {
+    background-color: gray;
+    border: 2px solid black;
+}
+#lb {
+    background-color: gray;
+    border: 2px solid black;
+}
+#lc {
+    background-color: gray;
+    border: 2px solid black;
+}
+#ld {
+    background-color: gray;
+    border: 2px solid black;
+}
+
+#orange {
+    background-color: orange;
+    border: 2px solid black;
+}
+
+#footer {
+    background-color: green;
+    border: 2px solid black;
 }

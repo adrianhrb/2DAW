@@ -12,23 +12,86 @@
 </head>
 <body>
     <div class="container-fluid text-center" id="header">
-        Header
+        Offset excersise
     </div>
     <br>
     <div class="container-fluid">
-        <div class="row gx-3" id="fila1">
-            <div class="col">
-                <div class="" id="f">1</div>
+        <div class="row gx-4 gy-4" id="fila1">
+            <div class="col-6 col-sm-3 offset-md-3">
+                <div class="p-5" id="f">1</div>
             </div>
-            <div class="col">
-                <div class="" id="f">2</div>
+            <div class="col-6 col-sm-3">
+                <div class="p-5" id="f">2</div>
             </div>
-            <div class="col">
-                <div class="" id="f">3</div>
+            <!-- Secret div to force element 3 and 4 to change row, only "visible" on md or superior -->
+            <div class="col-6 col-sm-3 d-none d-sm-none d-md-block">
+                <div class="p-5" id="hidden"></div>
             </div>
-            <div class="col">
-                <div class="" id="f">4</div>
+            <div class="col-6 col-sm-3">
+                <div class="p-5" id="f">3</div>
             </div>
+            <div class="col-6 col-sm-3 offset-md-6">
+                <div class="p-5" id="f">4</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Div only visible on tablet-size screen -->
+    <div class="container-fluid d-none d-sm-block d-md-none">
+        <div class="row text-center">
+            <div class="col-12 p-3" id="large-element">Tablet</div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!-- Gray divs that change the order in relation to the screen size -->
+    <div class="container-fluid">
+        <div class="row gx-4 gy-4" id="fila1">
+            <div class="col-6 col-sm-3 order-1 order-md-4">
+                <div class="p-5" id="la">a</div>
+            </div>
+            <div class="col-6 col-sm-3 order-2 order-md-3">
+                <div class="p-5" id="lb">b</div>
+            </div>
+            <div class="col-6 col-sm-3 order-3 order-md-2">
+                <div class="p-5" id="lc">c</div>
+            </div>
+            <div class="col-6 col-sm-3 order-4 order-md-1">
+                <div class="p-5" id="ld">d</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!-- Div only visible on md or superior size screens -->
+    <div class="container-fluid d-none d-md-block">
+        <div class="row text-center">
+            <div class="col-12 p-3" id="large-element">Desktop</div>
+        </div>
+    </div>
+    <!-- Div only visible on mobile -->
+    <div class="container-fluid d-block d-sm-none">
+        <div class="row text-center">
+            <div class="col-12 p-3" id="large-element">Mobile</div>
+        </div>
+    </div>
+    <br>
+    <!-- Variable div -->
+    <div class="container-fluid">
+        <div class="row gx-3">
+            <div class="col-sm-6 col-md-3 offset-md-3 order-md-1 order-sm-2 d-none d-sm-block">
+                <div class="p-5" id="orange">:p</div>   
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 order-md-2 order-sm-1">
+                <div class="p-5" id="orange">:D</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Footer -->
+    <div class="container-fluid d-none d-sm-block">
+        <div class="row text-center">
+            <div class="col-12 p-3" id="footer">Footer</div>
         </div>
     </div>
 
