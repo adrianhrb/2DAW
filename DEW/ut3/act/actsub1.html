@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sub-ventana</title>
+    <script src="act1.js"></script>
 </head>
 <body>
     <h1>Rellena el formulario con los datos que quieras pasar al otro documento</h1>
@@ -17,28 +18,5 @@
     </form>
     <br>
     <input type="button" value="Enviar datos" onclick="confirmData()">
-
-    <script>
-        function confirmData(){
-            if (window.confirm('Enviar datos?')){
-                sendData()
-            }
-            else {
-                alert('No se enviaran los datos')
-            }
-        }
-        function sendData(){
-            var name = document.getElementById('name').value
-            var surname = document.getElementById('surname').value
-            var postal = document.getElementById('num').value
-            var street = document.getElementById('street').value
-            var mun = document.getElementById('mun').value
-            var direction = 'Calle ' + street + ', en ' + mun + ' CP: ' + postal
-            window.opener.document.getElementById('nombre').value = name
-            window.opener.document.getElementById('apellido').value = surname
-            window.opener.document.getElementById('direccion').value = direction
-            window.close()
-        }
-    </script>
 </body>
 </html>

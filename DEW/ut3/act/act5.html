@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <script src="act5.js"></script>
 </head>
 <body>
     <h1>Calculadora Simple</h1>
@@ -19,42 +20,14 @@
         </label>
             <br/><br/>
         <div>
-            <button type="button" onclick="calculate('+')">+</button>
-            <button type="button" onclick="calculate('-')">-</button>
-            <button type="button" onclick="calculate('*')">*</button>
-            <button type="button" onclick="calculate('/')">÷</button>
-            <button type="button" onclick="calculate('x')">**</button>
+            <button type="button" onclick="calculate('+')">Addition</button>
+            <button type="button" onclick="calculate('-')">Substraction</button>
+            <button type="button" onclick="calculate('*')">Multiplication</button>
+            <button type="button" onclick="calculate('/')">Divison</button>
+            <button type="button" onclick="calculate('x')">Power</button>
         </div>
     </form>
 
     <p>Resultado: <input type="text" style="text-align:center" id="resultado" readonly></p>
-
-    <script>
-        function calculate(operation) {
-          // Extracting the two number values, working in float
-          var num1 = parseFloat(document.getElementById("numero1").value);
-          var num2 = parseFloat(document.getElementById("numero2").value);
-          var result = undefined;
-          // Using switch conditional instead of an if/else anidation
-          switch (operation) {
-            case "+":
-              result = num1 + num2;
-              break;
-            case "-":
-              result = num1 - num2;
-              break;
-            case "*":
-              result = num1 * num2;
-              break;
-            case "/":
-              result = num1 / num2;
-              break;
-            case 'x':
-                result = parseInt(num1) ** parseInt(num2);
-        }
-        document.getElementById("resultado").value = result;
-        }
-    </script>
-
 </body>
 </html>

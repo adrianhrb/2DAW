@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Char num</title>
+    <script src="act3.js"></script>
 </head>
 <body>
     <h5>Introduce un texto:</h5>
@@ -13,28 +14,5 @@
     <input type="button" value="Calcular" onclick="charCalculate()">
     <p id="char"></p>
     <p id="position"></p>
-
-    <script>
-        function charCalculate() {
-            var mainText = document.getElementById('maintext').value
-            var toFind = document.getElementById('find').value
-            var totalChars = mainText.length
-            var wordPosition = -1
-            var toFindList = mainText.split(' ')
-            for (i = 0; i < toFindList.length; i++) {
-                if (toFind == toFindList[i]) {
-                    var wordPosition = i
-                }
-            }
-            wordPosition += 1
-            document.getElementById('char').innerHTML = 'El nº total de caracteres es: ' + totalChars
-            if (0 < wordPosition){
-                document.getElementById('position').innerHTML = 'La palabra a buscar está en la posición: ' + wordPosition
-            }
-            else{
-                document.getElementById('position').innerHTML = 'La palabra no está en el texto'
-            }
-        }
-    </script>
 </body>
 </html>

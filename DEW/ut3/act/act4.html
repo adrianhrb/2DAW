@@ -5,37 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random page</title>
+    <script src="act4.js"></script>
 </head>
 <body>
     <h1>Bienvenido a la página random</h1>
     <p>Genera un número aleatorio y verás que pasa</p>
     <p><input type="button" value="Generar random" onclick="randomGenerator()"></p>
     <p>El número aleatorio es: <input type="number" id="num" readonly></p>
-
-    <script>
-        function randomGenerator() {
-            var randomNum = Math.round(Math.random() * (10 - 0 + 1) + 0)
-            document.getElementById('num').value = randomNum
-            if (randomNum <= 5) {
-                googleFunction()
-            } else {
-                alertFunction()
-            }
-        }
-
-        function googleFunction() {
-            window.open('https://google.com')
-        }
-
-        function alertFunction() {
-            var currDate = Date(Date.now())
-            var hour = currDate.toString()
-            if (parseInt(hour.split(' ')[4].split(':')[0]) <= 12) {
-                window.alert('Buenos dias, aun es pronto')
-            } else {
-                window.alert('Buenas tardes, ya fue mediodia')
-            }
-        }
-    </script>
 </body>
 </html>
