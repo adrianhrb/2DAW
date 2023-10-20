@@ -5,4 +5,13 @@
     text-align: center;
 }
 
-.card
+#card {
+    width: 18rem;
+}
+
+
+@media (max-width:576px) {
+    #card {
+        width: 100%;
+    }
+}
