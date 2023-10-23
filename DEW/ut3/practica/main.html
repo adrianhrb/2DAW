@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 3</title>
+</head>
+<body>
+    <h1>TAREA DWEC03 -- ADRIÁN HERRERA</h1>
+    <hr>
+    <div class="information">
+
+    </div>
+
+    <script>
+        let name = window.prompt('Cómo te llamas (nombre y apellidos)?: ').toLowerCase()
+        let dia = window.prompt('Qué día naciste?: ')
+        let mes = window.prompt('En qué mes naciste?: ')
+        let año = window.prompt('En que año naciste?: ')
+        let nameChars = name.length()
+        let firstA = name.indexOf('a')
+        let lastA = 0
+        for (i = nameChars; i == 0; i--){
+            if (name[i] == 'a' || name[i] == 'á') {
+                lastA = parseInt(i) + 1
+                break
+            }
+        }
+        let shortName = name.slice(3)
+        let upperName = name.toUpperCase()
+        let coseno = Math.cos(180)
+        let maxNum = Math.max(34,67,23,75,35,19)
+        let randomNum = Math.floor(Math.random() * 100000)
+        /* TODO */
+        let texto = `Buenos dias ${name},
+        tu nombre tiene ${nameChars} caracteres incluyendo espacios.
+        La primera A de tu nombre está en la posición ${firstA}.
+        La últuma A de tu nombre está en la posición ${lastA}.
+        Tu nombre menos las 3 primeras letras es: ${shortName}.
+        Tu nombre todo en mayúsculas es ${upperName}.
+        Tu edad es ${edad}.
+        Naciste un feliz ${dia} del año ${año}
+        El coseno de 180 es: ${coseno}
+        El número mayor de (34,67,23,75,35,19) es: ${maxNum}
+        Ejemplo de número al azar: ${randomNum}`
+    </script>
+</body>
+</html>
