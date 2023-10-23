@@ -13,9 +13,9 @@ function googleFunction() {
 }
 
 function alertFunction() {
-    var currDate = Date(Date.now())
-    var hour = currDate.toString()
-    if (parseInt(hour.split(' ')[4].split(':')[0]) <= 12) {
+    var currDate = new Date()
+    var hour = currDate.getHours()
+    if (parseInt(hour) <= 12) {
         window.alert('Buenos dias, aun es pronto')
     } else {
         window.alert('Buenas tardes, ya fue mediodia')
