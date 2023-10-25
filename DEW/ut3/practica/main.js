@@ -1,22 +1,3 @@
-// OTHER WINDOW CODE
-function newWindow() {
-    window.open('new_window.html', "new", "width=200,height=200,resizable=false");
-    document.getElementById('newinfo').innerHTML = 'Ejemplo de nueva ventana'
-    let url = window.location.href
-    let protocol = window.location.protocol
-    let navCode = navigator.appCodeName
-    if (navigator.javaEnabled == true) {
-        let javaAnswer = 'SI tiene java activado'
-    } else{
-        let javaAnswer = 'NO tiene java activado'
-    }
-    let textTOWrite = `Url: ${url}<br>Protocol: ${protocol}<br>Nombre en código del navegador: ${navCode}<br>${javaAnswer}`
-    document.getElementById('newinfo').innerHTML = textTOWrite
-    document.getElementById('myframe').src = 'https://bing.es'
-}
-
-
-
 // MAIN PAGE CODE
 let name = window.prompt('Cómo te llamas (nombre y apellidos)?: ').toLowerCase()
 let day = window.prompt('Qué día naciste?: ')
@@ -47,5 +28,21 @@ let texto = `Buenos dias ${name},<br>Tu nombre tiene ${nameChars} caracteres inc
 Tu edad es ${age}.<br>Naciste un feliz ${bornDay} del año ${year}<br>El coseno de 180 es: ${coseno}<br>El número mayor de (34,67,23,75,35,19) es: ${maxNum}<br>\
 Ejemplo de número al azar: ${randomNum}`
 window.alert(texto)
-window.onload = document.getElementById("info").innerHTML = texto
-window.onload = newWindow()
+onload = document.getElementById("texto").innerHTML = texto
+
+// OTHER WINDOW CODE
+/* function newWindow() {
+    var openedWindow = window.open('', "", "width=500,height=500,resizable=false");
+    openedWindow.getElementById('newinfo').innerHTML = 'Ejemplo de nueva ventana'
+    let url = openedWindow.location.href
+    let protocol = openedWindow.location.protocol
+    let navCode = openedWindow.navigator.appCodeName
+    if (openedWindow.navigator.javaEnabled == true) {
+        let javaAnswer = 'SI tiene java activado'
+    } else{
+        let javaAnswer = 'NO tiene java activado'
+    }
+    let textTOWrite = `Url: ${url}<br>Protocol: ${protocol}<br>Nombre en código del navegador: ${navCode}<br>${javaAnswer}`
+    openedWindow.document.getElementById('newinfo').innerHTML = textTOWrite
+    openedWindow.document.getElementById('myframe').src = 'https://bing.es'
+} */
