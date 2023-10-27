@@ -9,7 +9,7 @@ function randomGenerator() {
 }
 
 function googleFunction() {
-    window.open('https://google.com')
+    window.location.assign('https://google.com')
 }
 
 function alertFunction() {
