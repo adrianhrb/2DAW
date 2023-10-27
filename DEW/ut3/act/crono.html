@@ -16,67 +16,14 @@
     <input type="button" value="Reiniciar" onclick="reStartCrono()">
 
     <script>
-        window.onload = start()
-        let hours = 0;
-        let seconds = 0;
-        let minutes = 0;
-        let hoursToWrite = '';
-        let minutesToWrite = '';
-        let secondsToWrite = '';
-        let time = '';
-        let id = '';
-        function start(){
-            document.getElementById('time').innerHTML = '00:00:00';
-        }
+        let switchStatus = false;
+        let time = 0;
 
-        function crono(seconds, minutes, hours){
-            seconds++;
-            if (seconds >= 60){
-                seconds = 0;
-                minutes++;
-            }
-
-            if (minutes >= 60){
-                minutes = 0;
-                hours++;
-            }
-            
-            if (seconds < 10) {
-                secondsToWrite = '0' + seconds;
-            } else {
-                secondsToWrite = seconds;
-            }
-
-            if (minutes < 10) {
-                minutesToWrite = '0' + minutes;
-            } else {
-                minutesToWrite = minutes;
-            }
-
-            if (hours < 10){
-                hoursToWrite = '0' + hours;
-            } else {
-                hoursToWrite = hours;
-            }
-
-            time = hoursToWrite + ':' + minutesToWrite + ':' + secondsToWrite
-
-        };
-        
-        function startCrono(){
-            id = setInterval(crono(seconds, minutes, hours), 1000);
-        }
-
-        function stopCrono(){
-            clearInterval(id);
-        }
-
-        function reStartCrono(){
-            clearInterval(id)
-            seconds = 0;
-            minutes = 0;
-            hours = 0;
-            document.getElementById('time').innerHTML = '00:00:00';
+        function crono() {
+            time ++
+            let hours = Math.floor(time % 3600)
+            let minutes = Math.floor(time % 60)
+            let seconds = Math.floor(time % 60)
         }
     </script>
 
