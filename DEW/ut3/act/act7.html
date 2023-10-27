@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta regresiva</title>
+</head>
+<body>
+    <p>Tiempo restante:</p>
+    <p id="regresive"></p>
+    <input type="button" value="Start" onclick="init()">
+
+    <script>
+        var date = window.prompt('Introduce una fecha separada por /: ')
+        var dateList = date.split('/')
+        var day = parseInt(dateList[0])
+        var month = parseInt(dateList[1])
+        var year = parseInt(dateList[2])
+        var dateObject = new Date(year, month, day)
+        var userDateMiliseconds = dateObject.getTime()
+        var currDate = Date.now()
+        var onOff = false
+        var time = Math.floor((userDateMiliseconds - currDate) / 1000)
+        function count() {
+            time --;
+            //A continuación representamos horas:minutos:segundos
+            var daysToWrite = Math.floor(time / 86400);
+            var hoursToWrite = Math.floor((time % 24) / 60);
+            var minutesToWrite = Math.floor((time % 3600) / 60);
+            var secondsToWrite = time % 60;
+            document.getElementById('regresive').innerHTML = daysToWrite.toString() + ':' + hoursToWrite.toString().padStart(2,'0')+':'+minutesToWrite.toString().padStart(2,'0')+':'+secondsToWrite.toString().padStart(2,'0');
+        }
+
+        function init() {
+            setInterval(count, 1000);
+        }
+
+    </script>
+</body>
+</html>
