@@ -20,14 +20,14 @@
         var userDateMiliseconds = dateObject.getTime()
         var currDate = Date.now()
         var onOff = false
-        var time = Math.floor((userDateMiliseconds - currDate) / 1000)
+        var time = (userDateMiliseconds - currDate)
         function count() {
             time --;
             //A continuación representamos horas:minutos:segundos
-            var daysToWrite = Math.floor(time / 86400);
-            var hoursToWrite = Math.floor((time % 24) / 60);
-            var minutesToWrite = Math.floor((time % 3600) / 60);
-            var secondsToWrite = time % 60;
+            var daysToWrite = Math.floor(time / (1000 * 60 * 60 * 24));
+            var hoursToWrite = Math.floor(time / (1000 * 60 * 60 ));
+            var minutesToWrite = Math.floor(time / (1000 * 60 ));
+            var secondsToWrite = Math.floor(time / 1000);
             document.getElementById('regresive').innerHTML = daysToWrite.toString() + ':' + hoursToWrite.toString().padStart(2,'0')+':'+minutesToWrite.toString().padStart(2,'0')+':'+secondsToWrite.toString().padStart(2,'0');
         }
 
