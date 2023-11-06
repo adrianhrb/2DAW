@@ -12,12 +12,12 @@ let randomArray = arrayGenerator(50, 10, 20)
 function checkRepeat(array) {
     let numbersAppeared = []
     for (i=0; i<=array.length; i++){
-        if (numbersAppeared.find(array[i]) != undefined){
-            console.log('Repetido')
+        if (numbersAppeared.includes(array[i])){
+            alert('Repetido');
         }
         else {
-            console.log('No se repite')
+            alert('No se repite');
         }
-        numbersAppeared.push(array[i])
-    }
-}
+        numbersAppeared.push(array[i]);
+    };
+};
