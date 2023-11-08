@@ -17,7 +17,7 @@ function checkRepeat(array) {
         }
         else {
             alert('No se repite');
+            numbersAppeared.push(array[i]);
         }
-        numbersAppeared.push(array[i]);
     };
 };
