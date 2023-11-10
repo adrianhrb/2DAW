@@ -15,5 +15,4 @@ function arrayInfo(array){
     let minIndex = array.indexOf(minArrayNum)
     let maxIndex = array.indexOf(maxArrayNum)
     return maxArrayNum, minArrayNum, minIndex, maxIndex
-
 }
