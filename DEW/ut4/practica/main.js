@@ -1,3 +1,4 @@
+
 function edificio(calle, numero, postal) {
     this.calle = calle;
     this.numero = numero;
@@ -15,9 +16,15 @@ function edificio(calle, numero, postal) {
     this.modificarNumero = function (numero){this.numero = numero};
     this.modificarCalle = function (calle){this.calle = calle};
     this.modificarPostal = function (postal){this.postal = postal};
-    this.imprimeCalle = function(){console.log(this.calle)};
-    this.imprimeNumero = function(){console.log(this.numero)};
-    this.imprimePostal = function(){console.log(this.postal)};
+    this.imprimeCalle = function(){
+        document.getElementById('info').innerHTML = 'La calle de este edificio es ' + this.calle
+    }
+    this.imprimeNumero = function(){
+        document.getElementById('info').innerHTML = 'El numero de este edificio es ' + this.numero
+    }
+    this.imprimePostal = function(){
+        document.getElementById('info').innerHTML = 'El codigo postal de este edificio es ' + this.postal
+    }
     this.agregarPropietario = function(nombre, planta, puerta){
         this.plantas[planta].doors[puerta].owner = nombre
     }
@@ -25,10 +32,16 @@ function edificio(calle, numero, postal) {
         for (let i=0; i<=this.plantas.length; i++){
             plant = this.plantas[i]
             for (let j=0; j <= plant.length; i++){
-                console.log(plant.doors[j].owner)
+                document.getElementById('info').innerHTML = plant.doors[j].owner
             }
         }
     }
 }
 
 
+function crear(){
+    let calle = document.getElementById('calle').value
+    let numero = document.getElementById('numero').value
+    let postal = document.getElementById('postal').value
+    document.getElementById('info').innerHTML = 'construido nuevo edificio en calle: ' + calle +', nº: ' + numero + ', CP: ' + postal
+}
