@@ -1,0 +1,18 @@
+$grey-color : #333;
+$other-color: #666;
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    h1 {
+        font {
+            size: 24px;
+        }
+        color: $grey-color;
+    }
+    p {
+        font-size: 16px;
+        color: $other-color;
+    }
+}
