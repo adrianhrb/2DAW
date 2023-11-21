@@ -1,0 +1,5 @@
+$text: 'Hola. Bienvenido al aula Click'
+
+p::before{
+    content: str-slice($text,7,16);
+}
