@@ -12,6 +12,6 @@ $color2: #333;
 @media (min-width: #{($min-width - 1)}) {
     button {
         background-color: $color2;
-        color: $color1
+        color: $color1;
     }
 }
