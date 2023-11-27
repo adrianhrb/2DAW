@@ -58,7 +58,7 @@
             main.src = miniatures[4]
             main.id = 4
         })
-        document.addEventListener('keydown', function(event){
+        document.addEventListener('keydown', (event) => {
             if (event.key == 'ArrowRight'){
                 let currentId = document.getElementsByClassName('mainImage')[0].id
                 if (currentId == 'main'){
