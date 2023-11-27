@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo que sea</title>
+</head>
+<body>
+    <button id="test">Hazme click</button>
+    <script>
+        let myButton = document.getElementById('test')
+        function superFunction(){
+            alert('Has hecho click en el botón y ya no podrás hacerlo más')
+            myButton.removeEventListener('click', superFunction)
+        }
+        myButton.addEventListener('click', superFunction)
+    </script>
+</body>
+</html>
