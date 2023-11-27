@@ -1,0 +1,21 @@
+nav {
+    ul{
+        li{
+            display: inline-block;
+            margin-right: 20px;
+        };
+    };
+};
+
+ul{
+    li{
+        a{
+            color: #333;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underliness;
+            };
+        };
+    };
+};
+

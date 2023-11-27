@@ -1,0 +1,28 @@
+div.container {
+    background-color: red;
+    color: white;
+    height: 300px;
+    text-align: center;
+}
+
+div.container-fluid {
+    background-color: green;
+    color: white;
+    height: 300px;
+    text-align: center;
+}
+
+#black {
+    background-color: black;
+    color: white;
+}
+
+#grey {
+    background-color: gray;
+}
+
+#yellow {
+    background-color: greenyellow;
+    color: black;
+}
+

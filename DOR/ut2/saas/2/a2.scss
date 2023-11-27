@@ -1,0 +1,14 @@
+$min-width: 800px;
+$font-size: 16px;
+
+@media (min-width: $min-width){
+    p{
+        font-size: $font-size;
+    }
+}
+
+@media (min-width:#{($min-width - 1)}) {
+    p{
+        font-size: #{($font-size - 4)};
+    }
+}

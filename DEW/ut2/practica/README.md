@@ -35,93 +35,76 @@ function tablaDivide9() {
 }
 ```
 
+En el primer bucle, el de la tabla del 7 hemos utilizado un bucle (dentro de una función) clásico. El segundo bucle, es a través de un while, en el que definimos la i fuera del bucle y vamos aumentando su valor dentro y dentendremos el bucle cuando la i sea mayor que el 10. El último es bastante similar al segundo pero lo aplicamos con un do -> while. [El archivo JavaScript aquí](./tables.js)
+
+---
+
 2. Sabiendo que cuando desplazamos 1 bit a la derecha dividimos un entero por 2 y cuando lo desplazamos a la izquierda estamos multiplicando por 2; configurar tu web para que también imprima el resultado de las siguientes operaciones empleando desplazamiento de bits:
 
-   - 125 / 8 -> 125 >> 3
-   - 40 x 4 -> 40 << 2
-   - 25 / 2 -> 25 >> 1
-   - 10 x 16 -> 10 << 4
+   - 125 / 8 Solución -> 125 >> 3
+   - 40 x 4 Solución -> 40 << 2
+   - 25 / 2 Solución -> 25 >> 1
+   - 10 x 16 Soluciñon -> 10 << 4
+
+---
 
 3. Dado el siguiente código de una calculadora simple, Se pide:
    - Modificar el código proporcionado para agregar condicionales if que manejen las operaciones matemáticas según el botón que se presione.
    - También, modificar el código para usar un condicional switch en lugar de múltiples if para manejar las operaciones matemáticas.
    - Comentar el código y asegurarse de que esté bien indentado para una mayor claridad y presentación.
 
-Solucion:
+Para mejorar el funcionamiento de la calculadora lo ideal será utilizar una sola función con un parámetro de entrada. De esta forma, no estamos consumiendo memoria extra al tener que cargar más funciones de las necesarias. Al nivel de este pequeño programa es casi insignificante definir un par más de funciones, pero siempre será una mejor práctica optimizar hasta los más básicos programas para tener esa forma de programar y aplicarla cuando lleguen proyectos grandes. En este caso, hay varias posibles mejoras del programa, como en el enunciado se indica los condicionales if o con un switch. Lo primero que nos ayudará a aplicar ambas opciones, es el parámetro de entrada, que se encargará de "recoger" la operación a realizar. Una de las primeras opciones podría ser realizar la comprobación con if/else de esta forma:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Calculadora Simple</h1>
-    <br />
-    <form>
-      <label for="numero1"
-        >Número 1:
-        <input
-          type="number"
-          style="text-align:center"
-          id="numero1"
-          name="numero1"
-          required
-        />
-      </label>
-      <br /><br />
-      <label for="numero2"
-        >Número 2:
-        <input
-          type="number"
-          style="text-align:center"
-          id="numero2"
-          name="numero2"
-          required
-        />
-      </label>
-      <br /><br />
-      <div>
-        <button type="button" id="+" onclick="calculate('+')">+</button>
-        <button type="button" id="-" onclick="calculate('-')">-</button>
-        <button type="button" id="*" onclick="calculate('*')">&times;</button>
-        <button type="button" id="/" onclick="calculate('/')">÷</button>
-      </div>
-    </form>
-
-    <p>
-      Resultado:
-      <input type="text" style="text-align:center" id="resultado" readonly />
-    </p>
-
-    <script>
-      function calculate(operation) {
-        var num1 = parseFloat(document.getElementById("numero1").value);
-        var num2 = parseFloat(document.getElementById("numero2").value);
-        var result = undefined;
-        switch (operation) {
-          case "+":
-            result = num1 + num2;
-            break;
-          case "-":
-            result = num1 - num2;
-            break;
-          case "*":
-            result = num1 * num2;
-            break;
-          case "/":
-            result = num1 / num2;
-            break;
-          default:
-            result = "Problems with operation";
-            break;
-        }
-        document.getElementById("resultado").value = result;
-      }
-    </script>
-  </body>
-</html>
+```javascript
+function calculate(operation) {
+  // Extract the two number values, working in float
+  var num1 = parseFloat(document.getElementById("numero1").value);
+  var num2 = parseFloat(document.getElementById("numero2").value);
+  var result = undefined;
+  if (operation == "+") {
+    result = num1 + num2;
+  } else if (operation == "-") {
+    result = num1 - num2;
+  } else if (operation == "*") {
+    result = num1 * num2;
+  } else {
+    result = num1 / num2;
+  }
+  document.getElementById("resultado").value = result;
+}
 ```
+
+Pero la anidación de if/else puede llegar a ser engorrosa de leer y, eso significa que en algún punto será dificil de mantener, por lo que para la solución final se ha utilizado un switch, que además de permitir una lectura más sencilla, también permitiría añadir más condiciones en un futuro sin seguir llenando el código de llaves y paréntesis. Además de eso, para no estar creando la variable en cada una de las condiciones, la decisión que hemos tomado ha sido crear la variable fuera y darle como valor undefined, para así luego asignarle el valor del resultado de la operación que toque. El código resultante:
+
+```javascript
+function calculate(operation) {
+  // Extracting the two number values, working in float
+  var num1 = parseFloat(document.getElementById("numero1").value);
+  var num2 = parseFloat(document.getElementById("numero2").value);
+  var result = undefined;
+  // Using switch conditional instead of an if/else anidation
+  switch (operation) {
+    case "+":
+      result = num1 + num2;
+      break;
+    case "-":
+      result = num1 - num2;
+      break;
+    case "*":
+      result = num1 * num2;
+      break;
+    case "/":
+      result = num1 / num2;
+      break;
+    default:
+      result = "Problems with operation";
+      break;
+  }
+  document.getElementById("resultado").value = result;
+}
+```
+
+Estos son los códigos en javascript. Para seguir el enunciado de la práctica los pondremos dentro de las etiquetas script del HTML, los archivos resultantes:
+
+- [Opción con anidación de if / else](./ifelse.html)
+- [Opción con condicional switch](./switch.html)

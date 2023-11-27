@@ -1,0 +1,9 @@
+.box {
+    $widht: 1000px;
+    $height: 100px;
+    $margin-top: 10px;
+
+    width: $widht/10;
+    height: $height/2;
+    margin-top: $margin-top;
+}

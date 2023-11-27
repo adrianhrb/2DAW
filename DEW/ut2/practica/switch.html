@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora Simple</h1>
+    <br/>
+    <form>
+        <label for="numero1">Número 1:
+            <input type="number" style="text-align:center" id="numero1" name="numero1" required>
+        </label>
+            <br/><br/>
+        <label for="numero2">Número 2:
+            <input type="number" style="text-align:center" id="numero2" name="numero2" required>
+        </label>
+            <br/><br/>
+        <div>
+            <button type="button" onclick="calculate('+')">+</button>
+            <button type="button" onclick="calculate('-')">-</button>
+            <button type="button" onclick="calculate('*')">*</button>
+            <button type="button" onclick="calculate('/')">÷</button>
+        </div>
+    </form>
+
+    <p>Resultado: <input type="text" style="text-align:center" id="resultado" readonly></p>
+
+    <script>
+        function calculate(operation) {
+          // Extracting the two number values, working in float
+          var num1 = parseFloat(document.getElementById("numero1").value);
+          var num2 = parseFloat(document.getElementById("numero2").value);
+          var result = undefined;
+          // Using switch conditional instead of an if/else anidation
+          switch (operation) {
+            case "+":
+              result = num1 + num2;
+              break;
+            case "-":
+              result = num1 - num2;
+              break;
+            case "*":
+              result = num1 * num2;
+              break;
+            case "/":
+              result = num1 / num2;
+              break;
+            default:
+              result = "Problems with operation";
+              break;
+        }
+        document.getElementById("resultado").value = result;
+        }
+    </script>
+
+</body>
+</html>

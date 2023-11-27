@@ -1,0 +1,9 @@
+.outside {
+    background-color: chartreuse;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

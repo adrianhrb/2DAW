@@ -1,0 +1,17 @@
+$min-width: 800px;
+$color1: #fff;
+$color2: #333;
+
+@media (min-width: $min-width){
+    button {
+        background-color: $color1;
+        color: $color2;
+    }
+}
+
+@media (min-width: #{($min-width - 1)}) {
+    button {
+        background-color: $color2;
+        color: $color1;
+    }
+}

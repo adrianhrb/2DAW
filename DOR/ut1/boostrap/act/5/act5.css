@@ -1,0 +1,17 @@
+#header {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#card {
+    width: 18rem;
+}
+
+
+@media (max-width:576px) {
+    #card {
+        width: 100%;
+    }
+}

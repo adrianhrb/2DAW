@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event text</title>
+</head>
+<body>
+    <h1>Escribe algo en el siguiente input:</h1>
+    <input type="text" id="text">
+    <script>
+        window.onload = function(){
+            document.getElementById('text').addEventListener('keypress', (e) => {alert(`has pulsado la tecla ${e.key}`)});
+        };
+    </script>
+</body>
+</html>
