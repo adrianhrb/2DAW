@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container h1 {
+  color: #333;
+}
+.container h1 font {
+  size: 24px;
+}
+.container p {
+  color: #666;
+}
+.container p font {
+  size: 16px;
+}
+.container .btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+}
+.container .btn font {
+  size: 16px;
+}
+.container .btn:hover {
+  background-color: #fff;
+  color: #333;
+}/*# sourceMappingURL=ejer5.css.map */

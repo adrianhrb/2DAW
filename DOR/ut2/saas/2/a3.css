@@ -1,0 +1,12 @@
+@media (min-width: 800px) {
+  button {
+    background-color: #fff;
+    color: #333;
+  }
+}
+@media (min-width: 799px) {
+  button {
+    background-color: #333;
+    color: #fff;
+  }
+}/*# sourceMappingURL=a3.css.map */

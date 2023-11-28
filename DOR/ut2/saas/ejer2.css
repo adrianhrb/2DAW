@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container h1 {
+  color: #333;
+}
+.container h1 font {
+  size: 24px;
+}
+.container p {
+  font-size: 16px;
+  color: #666;
+}/*# sourceMappingURL=ejer2.css.map */

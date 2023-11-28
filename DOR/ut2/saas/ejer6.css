@@ -1,0 +1,13 @@
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+ul li a {
+  color: #333;
+  text-decoration: none;
+}
+ul li a:hover {
+  -webkit-text-decoration: underliness;
+          text-decoration: underliness;
+}/*# sourceMappingURL=ejer6.css.map */
