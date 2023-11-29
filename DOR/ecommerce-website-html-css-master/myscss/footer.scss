@@ -1,0 +1,26 @@
+#footer{
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    padding: 75px;
+    background-color: #ececec;
+    p, a{
+        color: rgb(109, 109, 109);
+        text-decoration: none;
+    }
+    a:hover {
+        color:$mygreen;
+    }
+    .about a{
+        display: block;
+        padding:8px 0;
+    }
+    .myaccount a{
+        display: block;
+        padding:8px 0;
+    }
+    .download img{
+        border: 1px solid #08817969;
+        border-radius: 7px;
+    }
+}

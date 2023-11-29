@@ -1,21 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 $myblack: #222;
 $mygreen: #088178;
 $mydarkgreen: #465b52;
 $mylightgrey: #e3e6f3;
 $mydisplay: flex;
 $childs: (2:#cdebbc,3:#d1e8f2,4:#cdd4f8 ,5:#f6dbf6,6:#fff2e5 );
+$titlecolor: mainblack;
 
 /* Opciones para poner un título u otro al gusto */
 $titleoption1: 0;
 $titleoption2: 1;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+}
 
 h1 {
   font: {
     size: 50px;
   }
   line-height: 64px;
-  @if $titleoption2 == 1 {color: $myblack;};
+  color: if($titlecolor == mainblack, $myblack, if($titlecolor == red, $color, green));
 }
+
 
 h2 {
   font: {
@@ -32,7 +42,13 @@ h4 {
 
 h6 {
   font-weight: 700;
-  font-size: 12px;
+  @if $titleoption2 == 1 {font-size: 12;};
+}
+
+p {
+    @if $titleoption2 == 1 {font-size: 16;};
+    color: if($titlecolor == mainblack, #465b52, if($titlecolor == red, $color, green));
+    margin: 15px 0 20px 0;
 }
 
 .section {
@@ -44,7 +60,7 @@ h6 {
     }
 }
 
-button.normal {
+.base-button {
     font: {
         size: 14px;
         weight: 600px;
@@ -57,6 +73,10 @@ button.normal {
     border: none;
     outline: none;
     transition: 0.2s;
+}
+
+button.normal {
+    @extend .base-button;
     &:hover{
         background-color: #088178;
         color: #fff;
@@ -70,112 +90,33 @@ body {
 
   /* header styles */
 
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #e3e6f3;
-    padding: 20px 80px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
-    position:fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.header{
-    &-list{
-        display: $mydisplay;
-        align-items: center;
-        justify-content: center;
-        &-nav ul{
-            display: $mydisplay;
-            & li{
-                list-style-type: none;
-            }
-            & a{
-                text-decoration: none;
-                font: {
-                    size: 16px;
-                    weight: 600;
-                }
-                color: #1a1a1a;
-                transition: 0.3s ease;
-                &:hover, &.active {
-                    color: $mygreen;
-                    content: "";
-                    &::after {
-                        content: "";
-                        width: 30%;
-                        height: 2px;
-                        background: $mygreen;
-                        position: absolute;
-                        bottom: -4px;
-                        left: 20px;
-                    }
-                }
-            }
-        }
-        &-icon a {
-            color: #1a1a1a;
-            padding-left: 20px;
-            transition: 0.3 ease;
-            &:hover {
-                color: $mygreen;
-            }
-        }
-    }
-    
-}
+@import 'header.scss';
 
 
   /* hero section styles */
 
-#hero {
-    background-image: url(images/hero4.png);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0 80px;
-    h4{
-        padding-bottom: 15px;
-        font-size: 40px;
-    }
-    h2{
-        font-size: 70px;
-    }
-    h1{
-        color: $mygreen;
-        font-size: 70px;
-    }
-    button{
-        background-color: transparent;
-        background-image: url(images/button.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 260px;
-        height: 60px;
-        border: 0;
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: 700;
-        color: $mygreen;
-        padding: 14px 65px 14px 65px;
-    }
-}
+@import 'hero.scss';
 
 
   /* feature section styles */
 
-#features {
+.special-display-flex {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+.my-special-title {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    font-size: 14px;
+    border-radius: 4px;
+    color: $mygreen;
+    background-color: #fddde4;
+}
+
+#features {
+    @extend .special-display-flex;
     .f-box{
         width: 180px;
         text-align: center;
@@ -190,13 +131,7 @@ body {
             margin-bottom: 10px;
         }
         h6{
-            display: inline-block;
-            padding: 9px 8px 6px 8px;
-            line-height: 1;
-            font-size: 14px;
-            border-radius: 4px;
-            color: $mygreen;
-            background-color: #fddde4;
+            @extend .my-special-title;
         }
         @each $number, $color in $childs{
             &:nth-child(#{$number}) h6 {
@@ -210,13 +145,32 @@ body {
 }
 
 
-  /* feature section styles */
-
 @mixin prod-element {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 60px;
+}
+
+@mixin cart-elemet {
+    width: 280px;
+    border: 1px solid #ebebeb;
+    padding: 13px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    transition: box-shadow 0.2s;
+}
+
+@mixin icons-buy-elements {
+    color: $mygreen;
+    background-color: #c7e9e75e;
+    padding: 15px;
+    border-radius: 50px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
 
 .product-section {
@@ -229,14 +183,7 @@ body {
         text-align: center;
     }
     .product-cart {
-        width: 280px;
-        border: 1px solid #ebebeb;
-        padding: 13px;
-        margin-bottom: 30px;
-        border-radius: 25px;
-        position: relative;
-        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-        transition: box-shadow 0.2s;
+        @include cart-elemet();
         &:hover{
             box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
         }
@@ -262,13 +209,7 @@ body {
             padding: 4px 0;
         }
         .buy-icon{
-            color: $mygreen;
-            background-color: #c7e9e75e;
-            padding: 15px;
-            border-radius: 50px;
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
+            @include icons-buy-elements();
         }
     }
 }
@@ -276,26 +217,16 @@ body {
 
   /* off banner section styles */
 
-#off-banner {
-    background-image: url(images/banner/b2.jpg);
-    background-size: cover;
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    h4 {
-        color: #eaebf0;
-    }
-    h2 {
-        color: #eaebf0;
-        padding: 20px 0;    
-    }
-}
+@import 'offbanner.scss';
 
 
   /* banners section styles */
+
+@mixin standard-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #banners {
     margin: 0 60px;
@@ -303,9 +234,7 @@ body {
         color: rgb(248, 248, 248);
     }
     .big-banners {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include standard-display();
         div {
             min-width: 580px;
             margin: 15px;
@@ -335,14 +264,12 @@ body {
         }
         @each $number, $link in (1:b17, 2:b10) {
             &-#{$number} {
-                background-image: url('images/banner/#{$link}.jpg');
+                background-image: url('../images/banner/#{$link}.jpg');
             }
         }
     }
     .small-banners{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include standard-display();
         div {
             min-width: 370px;
             height: 200px;
@@ -362,7 +289,7 @@ body {
         }
         @each $number, $link in (1:b7, 2:b4, 3:b18) {
             &-#{$number} {
-                background-image: url('images/banner/#{$link}.jpg');
+                background-image: url('../images/banner/#{$link}.jpg');
             }
         }
     }
@@ -372,7 +299,7 @@ body {
 /* newsletter section styles */
 
 #newsletter {
-    background-image: url(images/banner/b14.png);
+    background-image: url(../images/banner/b14.png);
     background-repeat: no-repeat;
     background-position: 180px;
     background-color: #041e42;
@@ -424,29 +351,4 @@ body {
 
 
 /* footer section styles */
-#footer{
-    display: flex;
-    align-items:flex-start;
-    justify-content: space-between;
-    padding: 75px;
-    background-color: #ececec;
-    p, a{
-        color: rgb(109, 109, 109);
-        text-decoration: none;
-    }
-    a:hover {
-        color:$mygreen;
-    }
-    .about a{
-        display: block;
-        padding:8px 0;
-    }
-    .myaccount a{
-        display: block;
-        padding:8px 0;
-    }
-    .download img{
-        border: 1px solid #08817969;
-        border-radius: 7px;
-    }
-}
+@import 'footer.scss';

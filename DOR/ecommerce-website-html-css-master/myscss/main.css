@@ -1,5 +1,13 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* Opciones para poner un título u otro al gusto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
 h1 {
   font-size: 50px;
   line-height: 64px;
@@ -19,7 +27,13 @@ h4 {
 
 h6 {
   font-weight: 700;
-  font-size: 12px;
+  font-size: 12;
+}
+
+p {
+  font-size: 16;
+  color: #465b52;
+  margin: 15px 0 20px 0;
 }
 
 .section-p1 {
@@ -29,7 +43,7 @@ h6 {
   margin: 40px 0;
 }
 
-button.normal {
+.base-button, button.normal {
   font-size: 14px;
   font-weight: 600px;
   padding: 15px 30px;
@@ -41,6 +55,7 @@ button.normal {
   outline: none;
   transition: 0.2s;
 }
+
 button.normal:hover {
   background-color: #088178;
   color: #fff;
@@ -75,6 +90,8 @@ body {
 }
 .header-list-nav ul li {
   list-style-type: none;
+  padding: 0 20px;
+  position: relative;
 }
 .header-list-nav ul a {
   text-decoration: none;
@@ -107,7 +124,7 @@ body {
 
 /* hero section styles */
 #hero {
-  background-image: url(images/hero4.png);
+  background-image: url(../images/hero4.png);
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -130,7 +147,7 @@ body {
 }
 #hero button {
   background-color: transparent;
-  background-image: url(images/button.png);
+  background-image: url(../images/button.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 260px;
@@ -144,11 +161,22 @@ body {
 }
 
 /* feature section styles */
-#features {
+.special-display-flex, #features {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
+.my-special-title, #features .f-box h6 {
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #088178;
+  background-color: #fddde4;
+}
+
 #features .f-box {
   width: 180px;
   text-align: center;
@@ -162,15 +190,6 @@ body {
 #features .f-box img {
   width: 100%;
   margin-bottom: 10px;
-}
-#features .f-box h6 {
-  display: inline-block;
-  padding: 9px 8px 6px 8px;
-  line-height: 1;
-  font-size: 14px;
-  border-radius: 4px;
-  color: #088178;
-  background-color: #fddde4;
 }
 #features .f-box:nth-child(2) h6 {
   background-color: #cdebbc;
@@ -191,7 +210,6 @@ body {
   box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.1);
 }
 
-/* feature section styles */
 .product-section {
   display: flex;
   flex-wrap: wrap;
@@ -253,7 +271,7 @@ body {
 
 /* off banner section styles */
 #off-banner {
-  background-image: url(images/banner/b2.jpg);
+  background-image: url(../images/banner/b2.jpg);
   background-size: cover;
   width: 100%;
   height: 40vh;
@@ -311,10 +329,10 @@ body {
   transition: 0.3s ease;
 }
 #banners .big-banners-1 {
-  background-image: url("images/banner/b17.jpg");
+  background-image: url("../images/banner/b17.jpg");
 }
 #banners .big-banners-2 {
-  background-image: url("images/banner/b10.jpg");
+  background-image: url("../images/banner/b10.jpg");
 }
 #banners .small-banners {
   display: flex;
@@ -339,18 +357,18 @@ body {
   color: #771818;
 }
 #banners .small-banners-1 {
-  background-image: url("images/banner/b7.jpg");
+  background-image: url("../images/banner/b7.jpg");
 }
 #banners .small-banners-2 {
-  background-image: url("images/banner/b4.jpg");
+  background-image: url("../images/banner/b4.jpg");
 }
 #banners .small-banners-3 {
-  background-image: url("images/banner/b18.jpg");
+  background-image: url("../images/banner/b18.jpg");
 }
 
 /* newsletter section styles */
 #newsletter {
-  background-image: url(images/banner/b14.png);
+  background-image: url(../images/banner/b14.png);
   background-repeat: no-repeat;
   background-position: 180px;
   background-color: #041e42;
@@ -422,4 +440,4 @@ body {
 #footer .download img {
   border: 1px solid rgba(8, 129, 121, 0.4117647059);
   border-radius: 7px;
-}/*# sourceMappingURL=test.css.map */
+}/*# sourceMappingURL=main.css.map */
