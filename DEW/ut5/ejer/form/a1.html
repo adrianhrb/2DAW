@@ -9,25 +9,103 @@
     <h1>Comprobación de "exámen"</h1>
     <h3>Qué futas son rojas?</h3>
     <form action="" method="post">
-        <p><label for="manzana">Manzana: <input type="checkbox" name="manzana" id="manzana" value="manzana"></label></p>
-        <p><label for="platano">Platano: <input type="checkbox" name="platano" id="platano" value="platano"></label></p>
-        <p><label for="fresa">Fresa: <input type="checkbox" name="fresa" id="fresa" value="fresa"></label></p>
-        <p><label for="mango">Mango: <input type="checkbox" name="mango" id="mango" value="mango"></label></p>
+        <p><label for="manzana">Manzana: </label><input type="checkbox" name="manzana" id="manzana" value="manzana"></p>
+        <p><label for="platano">Platano: </label><input type="checkbox" name="platano" id="platano" value="platano"></p>
+        <p><label for="fresa">Fresa: </label><input type="checkbox" name="fresa" id="fresa" value="fresa"></p>
+        <p><label for="mango">Mango: </label><input type="checkbox" name="mango" id="mango" value="mango"></p>
         <button id="comprobar1">Comprobar</button>
     </form>
     <br>
+    <div id="info1"></div>
     <br>
+    <br>
+    <h3>¿Cuál de las siguientes es un color primario?</h3>
     <form action="" method="post">
-        <p><input type="radio" name="rojo" id="rojo" value="rojo"></p>
-        <p><input type="radio" name="verde" id="verde" value="verde"></p>
-        <p><input type="radio" name="naranja" id="naranja" value="naranja"></p>
-        <p><input type="radio" name="marron" id="marron" value="marron"></p>
+        <p><label for="rojo">Rojo </label><input type="radio" name="color" id="rojo" value="rojo"></p>
+        <p><label for="verde">Verde </label><input type="radio" name="color" id="verde" value="verde"></p>
+        <p><label for="naranja">Naranja: </label><input type="radio" name="color" id="naranja" value="naranja"></p>
+        <p><label for="marron">Marron: </label><input type="radio" name="color" id="marron" value="marron"></p>
         <p><button id="comprobar2">Comprobar</button></p>
     </form>
     <br>
+    <div id="info2"></div>
     <br>
+    <br>
+    <h3>Selecciona un día de la semana que comience con "J"</h3>
     <form action="" method="post">
+        <select name="dias" id="dias">
+            <option value="lunes">Lunes</option>
+            <option value="martes">Martes</option>
+            <option value="miercoles">Miércoles</option>
+            <option value="jueves">Jueves</option>
+        </select>
         <button id="comprobar3">Comprobar</button>
     </form>
+    <br>
+    <div id="info3"></div>
+    <br>
+    <br>
+    <button id="result">Resultado final</button>
+    <br>
+    <div id="infofinal">
+
+    </div>
+    <script>
+        let comprobar1 = document.getElementById('comprobar1')
+        let comprobar2 = document.getElementById('comprobar2')
+        let comprobar3 = document.getElementById('comprobar3')
+        let final = document.getElementById('result')
+        function check1 (e){
+            e.preventDefault();
+            let points = 0;
+            let manzana = document.getElementById('manzana');
+            let mango = document.getElementById('mango');
+            let fresa = document.getElementById('fresa');
+            let platano = document.getElementById('platano');
+            if (mango.checked || mango.checked || platano.checked) {
+                document.getElementById('info1').innerHTML = 'Has fallado'
+                return 0
+            }
+            if (manzana.checked){
+                points += 0.5;
+            }
+            if (fresa.checked){
+                points += 0.5;
+            }
+            document.getElementById('info1').innerHTML = 'Has conseguido una puntuación de ' + points
+        }
+        comprobar1.addEventListener('click', check1);
+        function check2 (e){
+            e.preventDefault()
+            let elements = document.getElementsByName('color')
+            for (let i=0; i<elements.length; i++){
+                if (elements[i].checked){
+                    if (elements[i].value != 'rojo'){
+                        document.getElementById('info2').innerHTML = 'Has fallado'
+                        return 0
+                    }
+                }
+            }
+            document.getElementById('info2').innerHTML = 'Has conseguido una puntuación de ' + 1
+            return 1
+        }
+        comprobar2.addEventListener('click', check2);
+        function check3 (e){
+            e.preventDefault()
+            let options = document.getElementById('dias').options
+            if (options[options.selectedIndex].value != 'jueves'){
+                document.getElementById('info3').innerHTML = 'Has fallado'
+                return 0
+            }
+            document.getElementById('info3').innerHTML = 'Has conseguido una puntuación de ' + 1
+            return 1
+        }
+        comprobar3.addEventListener('click', check3);
+        final.addEventListener('click', (e) => {
+            e.preventDefault()
+            let mark = check1(e)
+            return alert(mark)
+        });
+    </script>
 </body>
 </html>
