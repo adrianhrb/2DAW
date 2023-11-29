@@ -1,0 +1,82 @@
+// Paletas de colores básica
+
+//Colores generales
+$color-background: 
+$color-base: 
+
+
+//Colores barra de menú
+$navbar-background-color: 
+$navbar-color-hover: $color-background;
+
+//Colores del borde 
+$border-color: $color-base;
+
+/*Estilos para el contenedor general de mi página*/
+$main-container-width: %;
+
+.container {
+    width: $main-container-width;
+    margin: 0 auto;
+}
+
+
+//Estilos para los bordes
+$border-width:0.1rem;
+$border-style: 
+
+$border-radius: rem;
+$boder-radius-big: rem;
+
+
+/*Usando anidamiento crear la hoja de estilos para un menú */
+nav {
+    background-color: $navbar-background-color;
+    padding: 0.2rem;
+
+    ul {
+        li {
+            display: 
+            padding-left: 1rem;
+            padding-right: rem;
+
+            &.active {
+                color: $navbar-color-hover;
+                font-weight:
+            }
+
+            &:hover {
+                color: $navbar-color-hover;
+            }
+
+
+            a {
+                text-decoration: 
+            }
+
+        }
+    }
+}
+
+/*Estructura de anidamiento para la figura (cards)*/
+$figure-width: %;
+
+figure.card {
+    border: $border-width #{$border-style} $border-color;
+    border-radius: $border-radius;
+    display:
+    padding: 1rem;
+    
+    width: $figure-width;
+     img {
+        border-radius: ; 
+        width: 100%;
+     }
+
+     figcaption {
+         font-size: 0.8rem;
+         margin: 0.5rem;
+         text-align: 
+     }
+
+}
