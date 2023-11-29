@@ -269,6 +269,26 @@ body {
   bottom: 10px;
 }
 
+.icons-part-prod .but :nth-child(1) {
+  color: #041e42;
+}
+
+.icons-part-prod .but :nth-child(2) {
+  color: #041e42;
+}
+
+.icons-part-prod .but :nth-child(3) {
+  color: #041e42;
+}
+
+.icons-part-prod .but :nth-child(4) {
+  color: #041e42;
+}
+
+.icons-part-prod .but :nth-child(5) {
+  color: #041e42;
+}
+
 /* off banner section styles */
 #off-banner {
   background-image: url(../images/banner/b2.jpg);
@@ -366,6 +386,18 @@ body {
   background-image: url("../images/banner/b18.jpg");
 }
 
+.new-my-thing h1 {
+  font-size: 20;
+}
+
+.new-my-thing h2 {
+  font-size: 20;
+}
+
+.new-my-thing h3 {
+  font-size: 20;
+}
+
 /* newsletter section styles */
 #newsletter {
   background-image: url(../images/banner/b14.png);
@@ -412,6 +444,48 @@ body {
   font-size: 17px;
   border-radius: 0 6px 6px 0;
   cursor: pointer;
+}
+
+.invent .a-1 {
+  background-color: red;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  align-self: start;
+}
+
+.invent .a-2 {
+  background-color: red;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  align-self: start;
+}
+
+.invent .a-3 {
+  background-color: red;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  align-self: start;
+}
+
+.invent .a-4 {
+  background-color: red;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  align-self: start;
+}
+
+.invent .a-5 {
+  background-color: red;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  align-self: start;
+}
+
+.invent .a-6 {
+  background-color: red;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  align-self: start;
 }
 
 /* footer section styles */
