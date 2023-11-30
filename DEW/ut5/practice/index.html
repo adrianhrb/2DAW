@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Validación de formularios con JS</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+  <fieldset>
+    <form name="formulario" id="formulario" action="http://www.google.es" method="get">
+      <legend>Formulario de Registro</legend>
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" />
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" name="apellidos" id="apellidos" />
+      <label for="edad">Edad:</label>
+      <input name="edad" type="text" id="edad" maxlength="3" />
+      <label for="nif">NIF:</label>
+      <input name="nif" type="text" id="nif" />
+      <label for="email">E-mail:</label>
+      <input name="email" type="text" id="email" />
+      <label for="provincia">Provincia:</label>
+      <select name="provincia" id="provincia">
+        <option value="0" selected="selected">Seleccione Provincia</option>
+        <option value="TFE">Santa Cruz de Tenerife</option>
+        <option value="GC">Las Palmas</option>
+      </select>
+      <label for="fecha">Fecha Nacimiento:</label>
+      <input name="fecha" type="text" id="fecha" />
+      <label for="telefono">Teléfono:</label>
+      <input name="telefono" type="text" id="telefono" maxlength="9"/>
+      <label for="hora">Hora de visita:</label>
+      <input name="hora" type="text" id="hora" />
+      <div>
+        <input type="reset" name="limpiar" id="limpiar" value="Limpiar" />
+        <input type="submit" name="enviar" id="enviar" value="Enviar" />
+      </div>
+    </form> 
+    <div id="errores"></div>
+    <div id="intentos"></div>
+  </fieldset>
+
+  <script>
+    let name = document.getElementById('nombre')
+    let surname = document.getElementById('apellidos')
+    let dni = document.getElementById('nif')
+    let sendButton = document.getElementById('enviar')
+
+    name.addEventListener('blur', function (){
+        name.value = name.value.toUpperCase()
+    });
+
+    surname.addEventListener('blur', function (){
+        surname.value = surname.value.toUpperCase()
+    });
+
+    nif.addEventListener('blur', function (){
+        nif.value = nif.value.toUpperCase()
+    });
+
+    sendButton.addEventListener('click', (e) => {
+        if (validateNameSurname() && validateAge() && valuidateDNI()){
+            confirm('Seguro que quieres flaco?')
+            return true
+        } else {
+            e.preventDefault()
+            return false
+        }
+    });
+
+    function validateNameSurname(){
+        let patern = /^[A-Za-z]+/;
+        let name = document.getElementById('nombre')
+        let surname = document.getElementById('apellidos')
+        if (patern.test(name.value)){
+            if(patern.test(surname.value)){
+                return true
+            } else {
+                surname.focus()
+                document.getElementById('errores').innerHTML = 'Apellidos en formato incorrecto'
+                return false
+            }
+        
+        } else{
+                name.focus()
+                document.getElementById('errores').innerHTML = 'Nombre en formato incorrecto'
+                return false
+        }
+    }
+
+    function validateAge(){
+        let age = document.getElementById('edad')
+        let patern = /\d+/
+        if (patern.test(age.value) == false){
+            document.getElementById('errores').innerHTML = 'La edad debe ser un numero'
+            return false
+        }
+        if (parseInt(age.value) <= 0 || parseInt(age.value) > 105 || age.value == ''){
+            age.focus()
+            document.getElementById('errores').innerHTML = 'La edad no es correcta'
+            return false
+        }
+        return true
+    }
+
+    function valuidateDNI(){
+        let patern = /^\d{8}-[A-Za-z]$/
+        let dni = document.getElementById('nif')
+        if (dni.value == ''){
+            document.getElementById('errores').innerHTML = 'El dni es requerido'
+            return false
+        }
+
+        if (patern.test(dni.value) == false){
+            document.getElementById('errores').innerHTML = 'El dni no sigue un patron correcto'
+            return false
+        }
+        return true
+    }
+  </script>
+</body>
+</html>
