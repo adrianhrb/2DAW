@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Validación de formularios con JS</title>
 <link rel="stylesheet" type="text/css" href="style.css">
+<script src="main.js"></script>
 
 </head>
 
@@ -41,84 +42,5 @@
     <div id="errores"></div>
     <div id="intentos"></div>
   </fieldset>
-
-  <script>
-    let name = document.getElementById('nombre')
-    let surname = document.getElementById('apellidos')
-    let dni = document.getElementById('nif')
-    let sendButton = document.getElementById('enviar')
-
-    name.addEventListener('blur', function (){
-        name.value = name.value.toUpperCase()
-    });
-
-    surname.addEventListener('blur', function (){
-        surname.value = surname.value.toUpperCase()
-    });
-
-    nif.addEventListener('blur', function (){
-        nif.value = nif.value.toUpperCase()
-    });
-
-    sendButton.addEventListener('click', (e) => {
-        if (validateNameSurname() && validateAge() && valuidateDNI()){
-            confirm('Seguro que quieres flaco?')
-            return true
-        } else {
-            e.preventDefault()
-            return false
-        }
-    });
-
-    function validateNameSurname(){
-        let patern = /^[A-Za-z]+/;
-        let name = document.getElementById('nombre')
-        let surname = document.getElementById('apellidos')
-        if (patern.test(name.value)){
-            if(patern.test(surname.value)){
-                return true
-            } else {
-                surname.focus()
-                document.getElementById('errores').innerHTML = 'Apellidos en formato incorrecto'
-                return false
-            }
-        
-        } else{
-                name.focus()
-                document.getElementById('errores').innerHTML = 'Nombre en formato incorrecto'
-                return false
-        }
-    }
-
-    function validateAge(){
-        let age = document.getElementById('edad')
-        let patern = /\d+/
-        if (patern.test(age.value) == false){
-            document.getElementById('errores').innerHTML = 'La edad debe ser un numero'
-            return false
-        }
-        if (parseInt(age.value) <= 0 || parseInt(age.value) > 105 || age.value == ''){
-            age.focus()
-            document.getElementById('errores').innerHTML = 'La edad no es correcta'
-            return false
-        }
-        return true
-    }
-
-    function valuidateDNI(){
-        let patern = /^\d{8}-[A-Za-z]$/
-        let dni = document.getElementById('nif')
-        if (dni.value == ''){
-            document.getElementById('errores').innerHTML = 'El dni es requerido'
-            return false
-        }
-
-        if (patern.test(dni.value) == false){
-            document.getElementById('errores').innerHTML = 'El dni no sigue un patron correcto'
-            return false
-        }
-        return true
-    }
-  </script>
 </body>
 </html>
