@@ -3,6 +3,7 @@
 //Colores generales
 $color-background: white;
 $color-base: black;
+$black-screen: true;
 
 
 //Colores barra de menú
@@ -29,25 +30,35 @@ $border-style: solid;
 $border-radius: 1rem;
 $boder-radius-big: 1.5rem;
 
+@mixin main-display {
+    display: inline-block;
+}
 
 /*Usando anidamiento crear la hoja de estilos para un menú */
+.myspecial {
+    color: $navbar-color-hover;
+}
+
 nav {
-    background-color: $navbar-background-color;
+    @if $black-screen == true {
+        background-color: $navbar-background-color;
+    }
+
     padding: 0.2rem;
 
     ul {
         li {
-            display: inline-block;
+            @include main-display;
             padding-left: 1rem;
             padding-right: 1rem;
 
             &.active {
-                color: $navbar-color-hover;
+                @extend .myspecial;
                 font-weight: bold;
             }
 
             &:hover {
-                color: $navbar-color-hover;
+                @extend .myspecial;
             }
 
 
@@ -61,17 +72,22 @@ nav {
 
 /*Estructura de anidamiento para la figura (cards)*/
 $figure-width: 25%;
+$variable-rem: 0;
 
 figure.card {
     border: $border-width #{$border-style} $border-color;
     border-radius: $border-radius;
     display: inline-block;
-    padding: 1rem;
+    @while($variable-rem == 0){
+        $variable-rem: $variable-rem + 1;
+        padding: #{$variable-rem}rem;
+    }
     
     width: $figure-width;
     img {
-        border-radius: 25px; 
-        width: 100%;
+        @each $element, $value in ('border-radius': 25px, 'width': 100%){
+            #{$element}: #{$value};
+        }
     }
 
     figcaption {
@@ -79,5 +95,5 @@ figure.card {
         margin: 0.5rem;
         text-align: center;
     }
-
 }
+
