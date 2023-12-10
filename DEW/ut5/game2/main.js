@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (confirm('Quieres volver a jugar?')){
                 char.style.top = 100 + 'px'
                 window.location.reload()
+            } else{
+                window.close()
             }
         }
     }, 10)
