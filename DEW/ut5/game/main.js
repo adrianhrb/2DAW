@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         counter ++
         newBlock = `block${counter}`
         block.classList.add(newBlock)
-    }, 11000)
+    }, 10000)
 
     if (counter == 3){
         clearTimeout(velocity)
