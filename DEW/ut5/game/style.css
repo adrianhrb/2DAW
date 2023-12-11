@@ -53,5 +53,17 @@ body {
 }
 
 .block{
+    animation: block 2s infinite;
+}
+
+.block1{
+    animation: block 1.5s infinite;
+}
+
+.block2 {
+    animation: block 1s infinite;
+}
+
+.block3 {
     animation: block 0.8s infinite;
 }

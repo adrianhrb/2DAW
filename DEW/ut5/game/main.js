@@ -1,9 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     let char = document.getElementById('char');
     let block = document.getElementById('block');
+    let counter = 0;
+    let newBlock = 'block'
     
     alert('Vamos a ello!')
     block.classList.add("block")
+
+    const velocity = setInterval(() => {
+        block.classList.remove(newBlock)
+        counter ++
+        newBlock = `block${counter}`
+        block.classList.add(newBlock)
+    }, 11000)
+
+    if (counter == 3){
+        clearTimeout(velocity)
+    }
 
     function jump(){
         char.classList.add("animate")
