@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let block = document.getElementById('block')
     let hole = document.getElementById('hole')
     let jumping = 0
+    let jumps = 0
     
     hole.addEventListener('animationiteration', () => {
         let random = -((Math.random() * 300) + 150);
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue('top'))
         let cTop = -(500 - charTop)
         if ((charTop > 480) || ((blockLeft < 20) && (blockLeft > -50) && ((cTop < holeTop) || (cTop>holeTop+130)))){
-            alert('Has perdido :(')
+            alert(`Has perdido tras haber saltado ${jumps} veces :(`)
             if (confirm('Quieres volver a jugar?')){
                 char.style.top = 100 + 'px'
                 window.location.reload()
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 10)
 
     function jump(){
+        jumps++
         jumping = 1
         let jumpCount  = 0
         let jumpInterval = setInterval(function(){
