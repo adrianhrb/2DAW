@@ -37,7 +37,7 @@ body {
 
 @keyframes block {
     0%{left:480px;}
-    100%{left: -40px;}
+    100%{left: -120px;}
 }
 
 
@@ -53,5 +53,5 @@ body {
 }
 
 .block{
-    animation: block 1s infinite;
+    animation: block 0.8s infinite;
 }
