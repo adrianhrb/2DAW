@@ -9,6 +9,7 @@
     border: 2px solid black;
     margin: auto;
     overflow: hidden;
+    background-image: url('img/fondo.png');
 }
 
 #block {
@@ -23,15 +24,15 @@
 @keyframes block{
     0%{left: 400px;}
     100%{left: -50px;}
-}
+}  
 
 #hole{
     width: 50px;
     height: 150px;
-    background-color: white;
     position: relative;
     left: 400px;
     top: -500px;
+    background-image: url('img/fondo.png');
     animation: block 2s infinite linear;
 }
 
@@ -63,8 +64,4 @@
 
 #chara {
     width: 40px;
-}
-
-.rotation {
-    rotate: -20deg;
 }

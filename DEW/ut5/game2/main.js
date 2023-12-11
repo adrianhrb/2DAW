@@ -50,8 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key == ' '){
             jump()
-            document.getElementById('chara').classList.add('rotation')
-            document.getElementById('chara').classList.remove('rotation')
         }
     })
 })
