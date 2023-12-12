@@ -1,0 +1,13 @@
+$cases: (
+    intrepida: (font-size: 11pt, color:red, background-color: lightgray),
+    clasica: (font: 12pt, color:black, background-color:white),
+    inversa: (font:9pt, color: orange, background-color: silver)
+);
+
+@each $name, $att in $cases{
+    .card-#{$name}{
+        @each $propery, $value in $att{
+            #{$propery}: $value
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@use 'sass:color';
+@mixin headelements($name, $color, $size, $percent){
+    @for $i from 1 through 6{
+        .#{$name} h#{$i}{
+            @if $i == 2{
+                font-size: $size * $percent /100;
+            } @else if $i == 3{
+                font-size: (($size * $percent /100) * 70) / 100;
+            } @else if $i == 4{
+                font-size: (((($size * $percent /100) * 70) / 100) * 70) / 100 ;
+            } @else if $i == 5{
+                font-size: (((((($size * $percent /100) * 70) / 100) * 70) / 100) * 70) / 100;
+            } @else if $i == 6{
+                font-size: (((((((($size * $percent /100) * 70) / 100) * 70) / 100) * 70) / 100) * 70) / 100;
+            }
+            color: color.adjust($color, $saturation: -($i*10));
+        }
+    }
+}
+
+
+@include headelements(miclase,#919b09 ,5rem ,70)

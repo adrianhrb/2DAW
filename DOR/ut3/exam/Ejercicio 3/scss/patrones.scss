@@ -1,0 +1,32 @@
+@use 'sass:color';
+
+$default-font: Comic Sans MS;
+@mixin sectionstyle($name, $color, $opacity, $font:$default-font){
+    .#{$name}{
+        background-image: url('../patrones/#{$name}.png');
+        padding: 5px;
+    }
+
+    .#{$name} article{
+        padding: 10px;
+        margin: 10px;
+        color: $color;
+        font-family: $font;
+        @if $opacity >= 0{
+            background-color: rgba(255,255,255, 0.6);
+        } @else {
+            background-color: rgba(0,0,0, 0.6);
+        }
+        @if color.lightness($color) > 50%{
+            text-shadow: 2px 2px 2px black;
+        } @else {
+            text-shadow: 2px 2px 2px white;
+        }
+    }
+}
+
+@include sectionstyle(relax, #93a8b7, 60, Verdana);
+@include sectionstyle(contrast, #cccccc, -65);
+@include sectionstyle(love, #f8afb2, 30, Gabriola);
+@include sectionstyle(psico, #1b4d48, 30, "Arial Black");
+@include sectionstyle(moderm, #fec87c, -20, Impact);
