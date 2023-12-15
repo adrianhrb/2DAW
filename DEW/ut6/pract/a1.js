@@ -54,6 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let mainDiv = document.querySelector('#zonadibujo')
     document.querySelector('#create').addEventListener('click', () => { // Agregamos el evento al botón de crear tablero
         let boardSize = parseInt(prompt('De cuanto quieres el tablero? Indicar solo un nº (Ej: 40)'))
+        if (boardSize > 100){
+            alert('Eso es un número demasiado grande, se ajustará automaticamente a 100')
+            boardSize = 100
+            
+        }
         mainDiv.style = `display:grid;grid-template-columns: repeat(${boardSize}, 0fr);` // Ordenamos por columnas según las que indique el usuario
         document.querySelector('input').style = 'display:none' // Ocultamos el boton una vez creado el tablero
 

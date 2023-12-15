@@ -5,6 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let newTag = document.createElement('li')
         let newElement = document.createTextNode(elements[parseInt(Math.random() * elements.length)])
         newTag.appendChild(newElement)
-        document.getElementById('lista').appendChild(newTag)
+        document.querySelector('#lista').appendChild(newTag)
     })
 })

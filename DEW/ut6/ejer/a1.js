@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Ex. made with query*
 document.addEventListener('DOMContentLoaded', () => {
-    let links = document.getElementsByTagName('a')
+    let links = document.querySelectorAll('a')
     let linksCounter = links.length
     let penultimate = links[linksCounter - 2]
     let pruebaLink = 'http://prueba'
