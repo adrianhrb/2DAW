@@ -13,11 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    document.querySelector('.customcolor').addEventListener('click', () => {
+        let lastElement = document.querySelector('.seleccionado')
+        let lastElementColor = lastElement.getAttribute('class').split(' ')[0]
+        lastElement.setAttribute('class', lastElementColor)
+        document.querySelector('.customcolor').classList.add('seleccionado')
+    })
+
     //Funcion para cambiar el color del elemento
     function changeColor(element){
         let currentSelected = document.querySelector('.seleccionado')
-        let style = window.getComputedStyle(currentSelected) // Extraemos los estilos CSS
-        let colorSelected = style.getPropertyValue('background-color') // Accedemos al color
+        if (currentSelected.getAttribute('class').split(' ')[0] == 'customcolor'){
+            colorSelected = document.getElementById('custom').value
+        }else{
+            let style = window.getComputedStyle(currentSelected) // Extraemos los estilos CSS
+            colorSelected = style.getPropertyValue('background-color') // Accedemos al color
+        }
         element.style.backgroundColor = `${colorSelected}`
     }
 
@@ -33,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Evento para la primera pulsacion
             newElement.addEventListener('mousedown', () => {
                 isDrawing = true
-                document.querySelector('#pincel').innerHTML = 'Estas pintando'
+                document.querySelector('#pincel').innerHTML = 'Painting 🖌️'
                 changeColor(newElement)
             })
             // Evento para cuando se mantiene pulsado el raton
@@ -45,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Evento para cuando se deja de pulsar el raton
             newElement.addEventListener('mouseup', () => {
                 isDrawing = false
-                document.querySelector('#pincel').innerHTML = 'No estas pintando'
+                document.querySelector('#pincel').innerHTML = 'Not painting ❌🖌️'
             });
         }
     }
@@ -53,22 +64,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento para el botón de crear 
     let mainDiv = document.querySelector('#zonadibujo')
     document.querySelector('#create').addEventListener('click', () => { // Agregamos el evento al botón de crear tablero
-        let boardSize = parseInt(prompt('De cuanto quieres el tablero? Indicar solo un nº (Ej: 40)'))
+        let boardSize = parseInt(prompt('Choose borad size, only one number (Ej: 40)'))
         if (boardSize > 100){
-            alert('Eso es un número demasiado grande, se ajustará automaticamente a 100')
+            alert('That is bigger than allowed size, board will automatically assigned as 100x100')
             boardSize = 100
             
         }
         mainDiv.style = `display:grid;grid-template-columns: repeat(${boardSize}, 0fr);` // Ordenamos por columnas según las que indique el usuario
-        document.querySelector('input').style = 'display:none' // Ocultamos el boton una vez creado el tablero
+        document.querySelector('#create').style = 'display:none' // Ocultamos el boton una vez creado el tablero
 
         // Creamos e insertamos al documento los bototnes para limpiar y resetear
         let clearButton = document.createElement('input')
         let resetButton = document.createElement('input')
-        resetButton.value = 'Resetear'
+        resetButton.value = 'Reset 🔁'
         resetButton.type = 'button'
         resetButton.id = 'reset'
-        clearButton.value = 'Limpiar tablero'
+        clearButton.value = 'Clean board 🧹'
         clearButton.type = 'button'
         clearButton.id = 'clear'
         document.querySelector('#button').appendChild(clearButton) 
@@ -80,12 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
             allPixels.forEach(pixel => {
                 pixel.style = 'width: 15px; height: 15px; border: 1px solid black; background-color: white'
             })
-            document.querySelector('#pincel').innerHTML = 'Haz click y manten pulsado para pintar varios pixeles'
+            document.querySelector('#pincel').innerHTML = 'Click and hold to paint'
         })
         resetButton.addEventListener('click', () => {
             location.reload()
         })
 
         createBoard(boardSize) // Finalmente llamamos a la función para crear el tablero
+        document.querySelector('#pincel').innerHTML = 'Click and hold to paint'
     })
 })

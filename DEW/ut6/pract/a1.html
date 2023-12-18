@@ -7,16 +7,22 @@
 <script src="a1.js"></script>
 </head>
 <body>
-<p>TABLERO DE DIBUJO EN JAVASCRIPT</p>
-<table width="500" border="1" id="paleta" summary="Tabla de selección de colores">
-  <caption>
-    Haga click en un color para comenzar a pintar
-  </caption>
-  <tr><td class="color1 seleccionado"></td><td class="color2"></td><td class="color3"></td><td class="color4"></td><td class="color5"></td><td class="color6"></td></tr>
-  <tr><td colspan="6" id="pincel">Haz click y manten pulsado para pintar varios pixeles</td></tr>
-</table>
+<h1>Choose a color to start drawing</h1>
+<div class="header">
+  <div class="color1 seleccionado"></div>
+  <div class="color2"></div>
+  <div class="color3"></div>
+  <div class="color4"></div>
+  <div class="color5"></div>
+</div>
+<div class="other">
+  <div class="customcolor">Choose your color: <input type="color" name="custom" id="custom"></div>
+  or <div class="color6">Erase 🆑 (Or white)</div>
+</div>
+
+<div id="pincel"></div>
 <p></p>
-<input type="button" value="Crear tablero" id="create">
+<input type="button" value="Create borad 🪄" id="create">
 <div id="button"></div>
 <br>
 <div id="zonadibujo"></div>
