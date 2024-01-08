@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UT7 Actividad 3 - Ejemplo de text() como getter y como setter.</title>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(() => {
+        let $button1 = $('#boton1')
+        let $button2 = $('#boton2')
+        let $button3 = $('#boton3')
+        let $paragraph = $('p')
+        $button1.click(() => {
+            alert('El texto es: ' + $paragraph.html())
+        })
+
+        $button2.click(() => {
+            $paragraph.html(prompt('Que quieres escribir:'))
+        })
+    })
+  </script>
+
+
+<body>
+
+
+  <p id="parrafo1">Texto del primer párrafo</p>
+
+  <table border="1">
+    <tr>
+      <td>celda 1,1</td>
+      <td>celda 1,2</td>
+      <td>celda 2,1</td>
+      <td>celda 2,2</td>
+    </tr>
+  </table>
+  <br>
+
+  <input type="button" value="Obtener el texto contenido en un párrafo" id="boton1"><br>
+  <input type="button" value="Modificar el texto de un párrafo" id="boton2"><br>
+  <input type="button" value="Modificar el texto de todos los elementos td de una tabla" id="boton3">
+</body>
+
+</html>
