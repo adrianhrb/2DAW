@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            let $add = $('#add')
+            let $remove = $('#remove')
+            let $show = $('#show')
+            let $change = $('#change')
+            let $table = $('table')
+
+            $add.click(() => {
+                $table.attr('border', '1')
+            })
+
+            $remove.click(() => {
+                $table.removeAttr('border')
+            })
+
+            $show.click(() => {
+                alert($table.attr('border'))
+            })
+
+            $change.click(() => {
+                $table.attr('border', prompt('New'))
+            })
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Edad</td>
+        </tr>
+        <tr>
+            <td>Pepe</td>
+            <td>López</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>Pepe</td>
+            <td>López</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>Pepe</td>
+            <td>López</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>Pepe</td>
+            <td>López</td>
+            <td>24</td>
+        </tr>
+    </table>
+    <br><br>
+    <button id="add">Añadir</button>
+    <button id="remove">Remove</button>
+    <button id="show">Show</button>
+    <button id="change">Change</button>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 8</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            let $ul = $('ul')
+
+            $('#add').click(() => {
+                let $element = prompt('Añade algo')
+                $ul.append(`<li>${$element}</li`)
+            })
+
+            $('#prepend').click(() => {
+                let $element = prompt('Añade algo')
+                $ul.prepend(`<li>${$element}</li`)
+            })
+
+            $('#remove').click(() => {
+                $('#3').remove()
+            })
+
+            $('#empty').click(() => {
+                $ul.empty()
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>Elemento</li>
+        <li>Elemento</li>
+        <li id="3">Elemento</li>
+        <li>Elemento</li>
+    </ul>
+    <button id="add">Añadir al final</button>
+    <button id="prepend">Añadir al inicio</button>
+    <button id="remove">Eliminar 3º</button>
+    <button id="empty">Vaciar</button>
+</body>
+</html>

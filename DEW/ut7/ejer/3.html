@@ -11,11 +11,15 @@
         let $button3 = $('#boton3')
         let $paragraph = $('p')
         $button1.click(() => {
-            alert('El texto es: ' + $paragraph.html())
+          alert('El texto es: ' + $paragraph.html())
         })
 
         $button2.click(() => {
-            $paragraph.html(prompt('Que quieres escribir:'))
+          $paragraph.html(prompt('Que quieres escribir:'))
+        })
+
+        $button3.click(() => {
+          $('td').html(prompt('Que texto quieres?:'))
         })
     })
   </script>

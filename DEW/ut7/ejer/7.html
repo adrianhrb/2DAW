@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('a').hover(function(){
+                $(this).css('color', 'green')
+            }, function(){
+                $(this).css('color', 'blue')
+            })
+        })
+    </script>
+</head>
+<body>
+    <a href="#" id="link">Enlace 1</a>
+    <a href="#1" id="link">Enlace 2</a>
+    <a href="#2" id="link">Enlace 3</a>
+</body>
+</html>

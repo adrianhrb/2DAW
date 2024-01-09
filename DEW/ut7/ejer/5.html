@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('#add').click(() => {
+                $('div').addClass('class')
+            })
+
+            $('#remove').click(() => {
+                $('div').removeClass('class')
+            })
+        })
+    </script>
+    <style>
+        .class p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>Hola</p>
+        <p>Hola</p>
+        <p>Hola</p>
+    </div>
+    <button id="add">Add class</button>
+    <button id="remove">Remove class</button>
+</body>
+</html>
