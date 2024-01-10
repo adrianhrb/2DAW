@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 10</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('.slow').click(() => {
+                $('.border').fadeOut(1000)
+            })
+
+            $('.show').click(() => {
+                $('.border').fadeIn()
+            })
+        })
+    </script>
+    <style>
+        .border{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border">
+        <p>Esto es un texto rodeado</p>
+    </div>
+    <br><br>
+    <button class="slow">Quitar lentamente</button>
+    <button class="show">Aparece</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 11</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('.move').click(() => {
+                $('.color').animate({"left":"+=100px"}, 1000, 'swing')
+            })
+
+            $('.original').click(() => {
+                $('.color').animate({left: '50px'}, 1000, 'swing')
+            })
+        })
+    </script>
+    <style>
+        .color{
+            position: absolute;
+            left: 50px;
+            height: 300px;
+            width: 300px;
+            background-color: red
+        }
+        button{
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="color">
+
+    </div>
+    <br><br>
+    <button class="move">Move</button>
+    <button class="original">Original</button>
+</body>
+</html>
