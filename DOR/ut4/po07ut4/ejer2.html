@@ -14,9 +14,6 @@
             background-color: greenyellow;
             border: 1px solid black;
         }
-        button:hover{
-            animation: spin 5s linear;
-        }
 
         @keyframes spin {
             0% {transform: rotateZ(-10deg);}
@@ -29,6 +26,8 @@
     </style>
 </head>
 <body>
-    <button id="test" onmouseover="this.style.animation='spin 2s forwards'">Prueba de botón</button>
+    <button id="test" onmouseover="this.style.animation='spin 5s forwards'">Prueba de botón</button>
 </body>
 </html>
+
+<!-- onmouseover="this.style.animation='spin 5s forwards'" -->
