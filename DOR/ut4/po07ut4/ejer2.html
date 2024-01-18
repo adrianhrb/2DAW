@@ -6,22 +6,24 @@
     <title>Ejercicio 2</title>
     <style>
         body{
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         button{
-            position: absolute;
-            left: 0px;
-            top:40px;
             background-color: greenyellow;
             border: 1px solid black;
+            width: 200px;
+            height: 40px;
         }
 
         @keyframes spin {
-            0% {transform: rotateZ(-10deg);}
-            5%{transform: rotateZ(-30deg);}
-            10%{transform: rotateZ(-90deg);}
-            25%{transform: rotateZ(-60deg);}
-            50%{transform: rotateZ(-90deg);}
+            0% {transform: rotate(10deg); transform-origin: 0 0;}
+            5%{transform: rotate(30deg);transform-origin: 0 0;}
+            10%{transform: rotate(90deg);transform-origin: 0 0;}
+            25%{transform: rotate(60deg);transform-origin: 0 0;}
+            50%{transform: rotate(90deg);transform-origin: 0 0;}
             100%{transform: translateY(1000px);}
         }
     </style>
