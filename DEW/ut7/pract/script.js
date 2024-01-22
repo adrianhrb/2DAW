@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         sendRequest(url + newUrl)
     })
 
+    // Evento para representar los cambios en el "select"
+    select.addEventListener('change', () => {
+        let currentOption = select.options[select.selectedIndex]
+        
+        sendRequest(url + currentOption.value)
+    })
+
     // Petición al servidor con la url del recurso agregada
     function sendRequest(url){
         fetch(url)
@@ -41,5 +48,4 @@ document.addEventListener('DOMContentLoaded', () => {
             noticias.appendChild(date)
         });
     }
-
 })
