@@ -30,6 +30,34 @@ document.addEventListener('DOMContentLoaded', () => {
         loadFromLocalStorage(currentOption.text)
     })
 
+    // Petición al servidor con la url del recurso agregada
+    function sendRequest(url, name){
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            saveOnLocalStorage(name, url)
+            displayData(data.channel.item)
+        })
+    }
+
+    // Función para guardar la información en localstorage
+    function saveOnLocalStorage(name, url){
+        let info = JSON.parse(localStorage.getItem('rssInfo'))
+        info.push({name: name, url: url})
+        localStorage.setItem('rssInfo', JSON.stringify(info))
+    }
+
+    // Función para cargar la información desde localstorage 
+    function loadFromLocalStorage(name){
+        let element = JSON.parse(localStorage.getItem('rssInfo'))
+        for(let i=0; i<element.length; i++){
+            if(element[i].name == name){
+                sendRequest(element[i].url)
+                break
+            }
+        }
+    }
+
     // Borrar el rss de localstorage
     function deleteRssFromMemory(name){
         let element = JSON.parse(localStorage.getItem('rssInfo'))
@@ -42,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('rssInfo', JSON.stringify(element))
     }
 
+    // Función auxiliar para cuando se borra un elemento del RSS
     function showFirstRssElement(){
         let element = JSON.parse(localStorage.getItem('rssInfo'))
         let options = select.options
@@ -52,35 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         loadFromLocalStorage(element[0].name)
-    }
-
-    // Petición al servidor con la url del recurso agregada
-    function sendRequest(url, name){
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            saveOnLocalStorage(name, data.channel.item)
-            displayData(data.channel.item)
-        })
-    }
-
-    // Función para guardar la información en localstorage
-    function saveOnLocalStorage(name, data){
-        let info = JSON.parse(localStorage.getItem('rssInfo'))
-        info.push({name: name, data: JSON.stringify(data)})
-        localStorage.setItem('rssInfo', JSON.stringify(info))
-    }
-
-    // Función para cargar la información desde localstorage y no
-    // lanzar peticiones de más al servidor
-    function loadFromLocalStorage(name){
-        let element = JSON.parse(localStorage.getItem('rssInfo'))
-        for(let i=0; i<element.length; i++){
-            if(element[i].name == name){
-                displayData(JSON.parse(element[i].data))
-                break
-            }
-        }
     }
     
     // Función para extraer los datos y representarlos en el div de noticias
