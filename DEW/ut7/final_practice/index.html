@@ -11,9 +11,8 @@
 
 <body>
   <fieldset>
+    <h1>Formulario práctica final:</h1>
     <form name="formulario" id="formulario" action="http://www.google.es" method="get">
-      <legend>Formulario de Registro</legend>
-
       <label for="nombre">Nombre:</label>
       <input type="text" name="nombre" id="nombre" />
 
@@ -27,7 +26,7 @@
       <input type="text" name="direccion" id="direccion">
 
       <label for="fecha">Fecha Nacimiento:</label>
-      <input name="fecha" type="text" id="fecha" />
+      <input name="fecha" type="date" id="fecha" />
 
       <label for="postal">Postal code:</label>
       <input name="postal" type="text" id="postal" />
@@ -50,9 +49,10 @@
       
       <label for="conditions">Acepto los términos y condiciones</label>
       <input type="checkbox" name="condiciones" id="condiciones">
+
+      <div id="errores"></div>
+      <input type="submit" name="enviar" id="enviar" value="Enviar" />
     </form> 
-    <div id="errores"></div>
-    <div id="intentos"></div>
   </fieldset>
 </body>
 </html>

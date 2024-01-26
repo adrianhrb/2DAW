@@ -1,167 +1,192 @@
 $(document).ready(() => {
-    intentos = 0
-    let nameInput = $('#nombre')
-    let surname = $('#apellidos')
-    let dni = $('#nif')
-    let sendButton = $('#enviar')
+  $("#enviar").click((e) => {
+    if (
+      validateNameSurname() &&
+      validateAge() &&
+      validateDNI() &&
+      validateMail() &&
+      mailsMatches() &&
+      validateAddress() &&
+    //   validateDate() &&
+      validatePhone() &&
+      validatePostal()
+    ) {
+      confirm("Seguro que quieres enviar el formulario?");
+      return true;
+    } else {
+      e.preventDefault();
+    }
+  });
 
-    sendButton.addEventListener('click', (e) => {
-        if (validateNameSurname() && validateAge() && validateDNI() && validateMail() && validateProvince() && validateDate() && validatePhone() && validateHour()){
-            confirm('Seguro que quieres enviar el formulario?')
-            intentos = 0
-            return true
-        } else {
-            intentos += 1
-            document.cookie = 'intentos=' + encodeURIComponent(intentos)
-            let attempts = document.cookie.split(';')[0].split('=')[1]
-            document.getElementById('intentos').innerHTML = 'Hasta el momentos llevas ' + attempts + ' intentos'
-            e.preventDefault()
-            return false
-        }
-    });
+  function validateNameSurname() {
+    let patern = /^[A-Za-z\s]+/;
+    let name = $("#nombre");
+    let surname = $("#apellidos");
 
-    function validateNameSurname(){
-        let patern = /^[A-Za-z]+/;
-        let name = document.getElementById('nombre')
-        let surname = document.getElementById('apellidos')
+    if (patern.test(name.val())) {
+      if (patern.test(surname.val())) {
+        return true;
+      } else {
+        surname.focus();
+        $("#errores").innerHTML = "Error en el apellido";
+        return false;
+      }
+    } else {
+      name.focus();
+      $("#errores").html('Error en el nombre')
+      return false;
+    }
+  }
 
-        if (patern.test(name.value)){
-            if(patern.test(surname.value)){
-                return true
-            } else {
-                surname.focus()
-                document.getElementById('errores').innerHTML = 'Error en el apellido'
-                return false
-            }
-        
-        } else{
-                name.focus()
-                document.getElementById('errores').innerHTML = 'Error en el nombre'
-                return false
-        }
+  function validateAge() {
+    let age = $("#edad");
+    let patern = /\d+/;
+
+    if (!patern.test(age.val())) {
+      $("#errores").innerHTML = "La edad debe ser un numero";
+      return false;
     }
 
-    function validateAge(){
-        let age = document.getElementById('edad')
-        let patern = /\d+/
-
-        if (patern.test(age.value) == false){
-            document.getElementById('errores').innerHTML = 'La edad debe ser un numero'
-            return false
-        }
-
-        if (parseInt(age.value) <= 0 || parseInt(age.value) > 105 || age.value == ''){
-            age.focus()
-            document.getElementById('errores').innerHTML = 'La edad no es correcta'
-            return false
-        }
-
-        return true
+    if (
+      parseInt(age.val()) <= 0 ||
+      parseInt(age.val()) > 200 ||
+      age.val() == ""
+    ) {
+      age.focus();
+      $("#errores").innerHTML = "La edad no está en un rango correcto";
+      return false;
     }
 
-    function validateDNI(){
-        let patern = /^\d{8}-[A-Za-z]$/
-        let dni = document.getElementById('nif')
+    return true;
+  }
 
-        if (dni.value == ''){
-            dni.focus()
-            document.getElementById('errores').innerHTML = 'El dni es requerido'
-            return false
-        }
+  function dniCharCalculator(dni) {
+    let characters = "TRWAGMYFPDXBNJZSQVHLCKET";
+    dni = parseInt(dni);
+    let position = dni % (characters.length - 1);
+    return characters[position];
+  }
 
-        if (patern.test(dni.value) == false){
-            document.getElementById('errores').innerHTML = 'El dni no sigue un patron correcto'
-            dni.focus()
-            return false
-        }
+  function validateDNI() {
+    let patern = /^\d{8}-[A-Za-z]$/;
+    let dni = $("#nif");
 
-        return true
+    if (dni.val() == "") {
+      dni.focus();
+      $("#errores").innerHTML = "El dni es requerido";
+      return false;
     }
 
-    function validateMail(){
-        let patern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+.[a-z]{2,4}$/
-        let mail = document.getElementById('email')
-
-        if(patern.test(mail.value) == false){
-            document.getElementById('errores').innerHTML = 'El mail no sigue un patron correcto'
-            mail.focus()
-            return false
-        }
-
-        return true
+    if (patern.test(dni.val()) == false) {
+      $("#errores").innerHTML = "El dni no sigue un patron correcto";
+      dni.focus();
+      return false;
     }
 
-    function validateProvince(){
-        let province = document.getElementById('provincia')
+    let matchDni = dni.val().toUpperCase().match(/^(\d+)([A-Z])$/);
 
-        if (province.value == '0'){
-            document.getElementById('errores').innerHTML = 'Debes seleccionar una provincia'
-            province.focus()
-            return false
-        }
-
-        return true
+    if (dniCharCalculator(matchDni[1] != matchDni[2])) {
+      $("#errores").innerHTML = "La letra del dni es incorrecta";
+      dni.focus();
+      return false;
     }
 
-    function validateDate(){
-        let date = document.getElementById('fecha')
-        let patern1 = /\d{2}\/\d{2}\/\d{2,4}/
-        let patern2 = /\d{2}-\d{2}-\d{2,4}/
+    return true;
+  }
 
-        if (date.value == ''){
-            document.getElementById('errores').innerHTML = 'La fecha es un campo requerido'
-            date.focus()
-            return false
-        }
+  function validateMail() {
+    let patern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+.[a-z]{2,4}$/;
+    let mail = $("email");
 
-        if (patern1.test(date.value) == false){
-            if (patern2.test(date.value) == false){
-                document.getElementById('errores').innerHTML = 'La fecha no sigue el formato correcto'
-                date.focus()
-                return false
-            }
-        }
-
-        return true
+    if (!patern.test(mail.val())) {
+      $("#errores").innerHTML = "El mail no sigue un patron correcto";
+      mail.focus();
+      return false;
     }
 
-    function validatePhone(){
-        let patern = /\d{9}/
-        let phone = document.getElementById('telefono')
+    return true;
+  }
 
-        if (phone.value == ''){
-            document.getElementById('errores').innerHTML = 'El teléfono es un campo requerido'
-            date.focus()
-            return false
-        }
+  function mailsMatches() {
+    let mail1 = $("#email");
+    let mail2 = $("confirmacion");
 
-        if (patern.test(phone.value) == false){
-            document.getElementById('errores').innerHTML = 'El teléfono debe tener 9 números'
-            phone.focus()
-            return false
-        }
+    if (mail1 != mail2) {
+      $("#errores").innerHTML = "Los mails no son iguales";
+      mail.focus();
+      return false;
+    }
+  }
 
-        return true
+  function validateAddress() {
+    let address = $("#direccion");
+
+    if (address.val() == "") {
+      $("#errores").innerHTML = "Debes añadir una dirección";
+      address.focus();
+      return false;
     }
 
-    function validateHour(){
-        let patern = /^\d{2}:\d{2}$/
-        let hour = document.getElementById('hora')
+    return true;
+  }
 
-        if (hour.value == ''){
-            document.getElementById('errores').innerHTML = 'La hora es un campo requerido'
-            date.focus()
-            return false
-        }
+  //   function validateDate() {
+  //     let date = document.getElementById("fecha");
+  //     let patern1 = /\d{2}\/\d{2}\/\d{2,4}/;
+  //     let patern2 = /\d{2}-\d{2}-\d{2,4}/;
 
-        if (patern.test(hour.value) == false){
-            document.getElementById('errores').innerHTML = 'La hora debe seguir el formato HH:MM'
-            hour.focus()
-            return false
-        }
+  //     if (date.val() == "") {
+  //       $("#errores").innerHTML = "La fecha es un campo requerido";
+  //       date.focus();
+  //       return false;
+  //     }
 
-        return true
+  //     if (patern1.test(date.val()) == false) {
+  //       if (patern2.test(date.val()) == false) {
+  //         $("#errores").innerHTML = "La fecha no sigue el formato correcto";
+  //         date.focus();
+  //         return false;
+  //       }
+  //     }
+
+  //     return true;
+  //   }
+
+  function validatePhone() {
+    let patern = /\d{9}/;
+    let phone = $("#telefono");
+
+    if (phone.val() == "") {
+      $("#errores").innerHTML = "El teléfono es un campo requerido";
+      date.focus();
+      return false;
     }
-})
-    
-    
+
+    if (!patern.test(phone.val())) {
+      $("#errores").innerHTML = "El teléfono debe tener 9 números";
+      phone.focus();
+      return false;
+    }
+
+    return true;
+  }
+
+  function validatePostal() {
+    let patern = /^\d{5}$/;
+    let postal = $("#postal");
+
+    if (postal.val() == "") {
+      $("#errores").innerHTML = "El codigo postal es un campo requerido";
+      date.focus();
+      return false;
+    }
+
+    if (!patern.test(postal.val())) {
+      $("#errores").innerHTML = "El codigo postal debe tener 5 dígitos";
+      hour.focus();
+      return false;
+    }
+
+    return true;
+  }
+});
