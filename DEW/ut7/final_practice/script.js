@@ -2,12 +2,11 @@ $(document).ready(() => {
   $("#enviar").click((e) => {
     if (
       validateNameSurname() &&
-      validateAge() &&
       validateDNI() &&
       validateMail() &&
       mailsMatches() &&
       validateAddress() &&
-    //   validateDate() &&
+      //   validateDate() &&
       validatePhone() &&
       validatePostal()
     ) {
@@ -28,36 +27,14 @@ $(document).ready(() => {
         return true;
       } else {
         surname.focus();
-        $("#errores").innerHTML = "Error en el apellido";
+        $("#errores").html("Error en el apellido");
         return false;
       }
     } else {
       name.focus();
-      $("#errores").html('Error en el nombre')
+      $("#errores").html("Error en el nombre");
       return false;
     }
-  }
-
-  function validateAge() {
-    let age = $("#edad");
-    let patern = /\d+/;
-
-    if (!patern.test(age.val())) {
-      $("#errores").innerHTML = "La edad debe ser un numero";
-      return false;
-    }
-
-    if (
-      parseInt(age.val()) <= 0 ||
-      parseInt(age.val()) > 200 ||
-      age.val() == ""
-    ) {
-      age.focus();
-      $("#errores").innerHTML = "La edad no está en un rango correcto";
-      return false;
-    }
-
-    return true;
   }
 
   function dniCharCalculator(dni) {
@@ -68,25 +45,28 @@ $(document).ready(() => {
   }
 
   function validateDNI() {
-    let patern = /^\d{8}-[A-Za-z]$/;
+    let patern = /^\d{8}[A-Za-z]{1}$/;
     let dni = $("#nif");
 
     if (dni.val() == "") {
       dni.focus();
-      $("#errores").innerHTML = "El dni es requerido";
+      $("#errores").html("El dni es requerido");
       return false;
     }
 
-    if (patern.test(dni.val()) == false) {
-      $("#errores").innerHTML = "El dni no sigue un patron correcto";
+    if (!patern.test(dni.val())) {
+      $("#errores").html("El dni no sigue un patron correcto");
       dni.focus();
       return false;
     }
 
-    let matchDni = dni.val().toUpperCase().match(/^(\d+)([A-Z])$/);
+    let matchDni = dni
+      .val()
+      .toUpperCase()
+      .match(/^(\d+)([A-Z])$/);
 
-    if (dniCharCalculator(matchDni[1] != matchDni[2])) {
-      $("#errores").innerHTML = "La letra del dni es incorrecta";
+    if (dniCharCalculator(matchDni[1]) != matchDni[2]) {
+      $("#errores").html("La letra del dni es incorrecta");
       dni.focus();
       return false;
     }
@@ -99,7 +79,7 @@ $(document).ready(() => {
     let mail = $("email");
 
     if (!patern.test(mail.val())) {
-      $("#errores").innerHTML = "El mail no sigue un patron correcto";
+      $("#errores").html("El mail no sigue un patron correcto");
       mail.focus();
       return false;
     }
