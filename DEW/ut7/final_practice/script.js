@@ -78,6 +78,11 @@ $(document).ready(() => {
     let patern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+.[a-z]{2,4}$/;
     let mail = $("email");
 
+    if(mail.val() == ''){
+        $("#errores").html("El mail no puede ser vacio")
+        mail.focus()
+        return false;
+    }
     if (!patern.test(mail.val())) {
       $("#errores").html("El mail no sigue un patron correcto");
       mail.focus();
