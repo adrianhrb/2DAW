@@ -22,19 +22,31 @@ $(document).ready(() => {
     let name = $("#nombre");
     let surname = $("#apellidos");
 
-    if (patern.test(name.val())) {
-      if (patern.test(surname.val())) {
-        return true;
-      } else {
-        surname.focus();
-        $("#errores").html("Error en el apellido");
-        return false;
-      }
-    } else {
+    if (name.val() == "") {
+      name.focus();
+      $("#errores").html("El nombre es un campo requerido");
+      return false;
+    }
+
+    if (surname.val() == "") {
+      surnamename.focus();
+      $("#errores").html("El apellido es un campo requerido");
+      return false;
+    }
+
+    if (!patern.test(name.val())) {
       name.focus();
       $("#errores").html("Error en el nombre");
       return false;
     }
+
+    if (!patern.test(surname.val())) {
+      surname.focus();
+      $("#errores").html("Error en el apellido");
+      return false;
+    }
+
+    return true;
   }
 
   function dniCharCalculator(dni) {
@@ -78,10 +90,10 @@ $(document).ready(() => {
     let patern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+.[a-z]{2,4}$/;
     let mail = $("email");
 
-    if(mail.val() == ''){
-        $("#errores").html("El mail no puede ser vacio")
-        mail.focus()
-        return false;
+    if (mail.val() == "") {
+      $("#errores").html("El mail no puede ser vacio");
+      mail.focus();
+      return false;
     }
     if (!patern.test(mail.val())) {
       $("#errores").html("El mail no sigue un patron correcto");
