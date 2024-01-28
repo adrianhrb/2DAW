@@ -1,14 +1,15 @@
 $(document).ready(() => {
   $("#enviar").click((e) => {
     if (
-      validateNameSurname() &&
+      validateName() &&
+      validateSurname() &&
       validateDNI() &&
+      validateAddress() &&
+      validatePostal() &&
       validateMail() &&
       mailsMatches() &&
-      validateAddress() &&
       //   validateDate() &&
-      validatePhone() &&
-      validatePostal()
+      validatePhone() 
     ) {
       confirm("Seguro que quieres enviar el formulario?");
       return true;
@@ -17,10 +18,9 @@ $(document).ready(() => {
     }
   });
 
-  function validateNameSurname() {
+  function validateName() {
     let patern = /^[A-Za-z\s]+/;
     let name = $("#nombre");
-    let surname = $("#apellidos");
 
     if (name.val() == "") {
       name.focus();
@@ -28,15 +28,22 @@ $(document).ready(() => {
       return false;
     }
 
-    if (surname.val() == "") {
-      surnamename.focus();
-      $("#errores").html("El apellido es un campo requerido");
-      return false;
-    }
-
     if (!patern.test(name.val())) {
       name.focus();
       $("#errores").html("Error en el nombre");
+      return false;
+    }
+
+    return true;
+  }
+
+  function validateSurname() {
+    let patern = /^[A-Za-z\s]+/;
+    let surname = $("#apellidos");
+
+    if (surname.val() == "") {
+      surnamename.focus();
+      $("#errores").html("El apellido es un campo requerido");
       return false;
     }
 
@@ -126,28 +133,6 @@ $(document).ready(() => {
 
     return true;
   }
-
-  //   function validateDate() {
-  //     let date = document.getElementById("fecha");
-  //     let patern1 = /\d{2}\/\d{2}\/\d{2,4}/;
-  //     let patern2 = /\d{2}-\d{2}-\d{2,4}/;
-
-  //     if (date.val() == "") {
-  //       $("#errores").innerHTML = "La fecha es un campo requerido";
-  //       date.focus();
-  //       return false;
-  //     }
-
-  //     if (patern1.test(date.val()) == false) {
-  //       if (patern2.test(date.val()) == false) {
-  //         $("#errores").innerHTML = "La fecha no sigue el formato correcto";
-  //         date.focus();
-  //         return false;
-  //       }
-  //     }
-
-  //     return true;
-  //   }
 
   function validatePhone() {
     let patern = /\d{9}/;
