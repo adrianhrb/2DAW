@@ -1,5 +1,6 @@
 $(document).ready(() => {
   $("#enviar").click((e) => {
+    e.preventDefault()
     if (
       validateName() &&
       validateSurname() &&
@@ -8,13 +9,13 @@ $(document).ready(() => {
       validatePostal() &&
       validateMail() &&
       mailsMatches() &&
-      //   validateDate() &&
       validatePhone() 
     ) {
       confirm("Seguro que quieres enviar el formulario?");
+      $('#enviar').submit()
       return true;
     } else {
-      e.preventDefault();
+      return false
     }
   });
 
