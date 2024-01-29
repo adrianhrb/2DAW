@@ -1,6 +1,5 @@
 $(document).ready(() => {
   $("#enviar").click((e) => {
-    e.preventDefault()
     if (
       validateName() &&
       validateSurname() &&
@@ -9,18 +8,18 @@ $(document).ready(() => {
       validatePostal() &&
       validateMail() &&
       mailsMatches() &&
-      validatePhone() 
-    ) {
-      confirm("Seguro que quieres enviar el formulario?");
-      $('#enviar').submit()
-      return true;
-    } else {
-      return false
+      validatePhone()
+      ) {
+        confirm("Seguro que quieres enviar el formulario?");
+        return true;
+      } else {
+        e.preventDefault();
+        return false;
     }
   });
 
   function validateName() {
-    let patern = /^[A-Za-z\s]+/;
+    let patern = /^[A-Za-z\s]+$/;
     let name = $("#nombre");
 
     if (name.val() == "") {
@@ -39,11 +38,11 @@ $(document).ready(() => {
   }
 
   function validateSurname() {
-    let patern = /^[A-Za-z\s]+/;
+    let patern = /^[A-Za-z\s]+$/;
     let surname = $("#apellidos");
 
     if (surname.val() == "") {
-      surnamename.focus();
+      surname.focus();
       $("#errores").html("El apellido es un campo requerido");
       return false;
     }
@@ -96,13 +95,15 @@ $(document).ready(() => {
 
   function validateMail() {
     let patern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+.[a-z]{2,4}$/;
-    let mail = $("email");
+    let mail = $("#email");
+    let confirmation = $('#confirmacion')
 
     if (mail.val() == "") {
       $("#errores").html("El mail no puede ser vacio");
       mail.focus();
       return false;
     }
+
     if (!patern.test(mail.val())) {
       $("#errores").html("El mail no sigue un patron correcto");
       mail.focus();
@@ -114,20 +115,21 @@ $(document).ready(() => {
 
   function mailsMatches() {
     let mail1 = $("#email");
-    let mail2 = $("confirmacion");
+    let mail2 = $("#confirmacion");
 
-    if (mail1 != mail2) {
-      $("#errores").innerHTML = "Los mails no son iguales";
-      mail.focus();
+    if (mail1.val() != mail2.val()) {
+      $("#errores").html("Los mails no son iguales");
+      mail1.focus();
       return false;
     }
+    return true
   }
 
   function validateAddress() {
     let address = $("#direccion");
 
     if (address.val() == "") {
-      $("#errores").innerHTML = "Debes añadir una dirección";
+      $("#errores").html("Debes añadir una dirección");
       address.focus();
       return false;
     }
@@ -135,38 +137,20 @@ $(document).ready(() => {
     return true;
   }
 
-  function validatePhone() {
-    let patern = /\d{9}/;
-    let phone = $("#telefono");
-
-    if (phone.val() == "") {
-      $("#errores").innerHTML = "El teléfono es un campo requerido";
-      date.focus();
-      return false;
-    }
-
-    if (!patern.test(phone.val())) {
-      $("#errores").innerHTML = "El teléfono debe tener 9 números";
-      phone.focus();
-      return false;
-    }
-
-    return true;
-  }
 
   function validatePostal() {
     let patern = /^\d{5}$/;
     let postal = $("#postal");
 
     if (postal.val() == "") {
-      $("#errores").innerHTML = "El codigo postal es un campo requerido";
-      date.focus();
+      $("#errores").html("El codigo postal es un campo requerido");
+      postal.focus();
       return false;
     }
 
     if (!patern.test(postal.val())) {
-      $("#errores").innerHTML = "El codigo postal debe tener 5 dígitos";
-      hour.focus();
+      $("#errores").html("El codigo postal debe tener 5 dígitos");
+      postal.focus();
       return false;
     }
 
