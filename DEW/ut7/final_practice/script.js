@@ -1,4 +1,37 @@
 $(document).ready(() => {
+
+
+  function getProvinces(){    
+      fetch('cargarProvinciasJSON.php')
+      .then(response => response.json())
+      .then(data => {
+          Object.keys(data).forEach(prov => {
+              let newOption = $(`<option value=${prov}>${data[prov]}</option>`)
+              $('#provincia').append(newOption)
+          })
+      })
+  }
+
+  $('#provincia').change((e) => {
+      console.log($("#provincias")[0].selectedIndex)
+  })
+  
+  function getTown(id){
+      let data = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: 'provincia=' + id
+      }
+      
+      fetch('cargarMunicipiosJSON.php', data)
+      .then(response => response.text())
+      .then(data => console.log(data))
+  }
+  
+  getProvinces()
+
   $("#enviar").click((e) => {
     if (
       validateName() &&
@@ -7,8 +40,7 @@ $(document).ready(() => {
       validateAddress() &&
       validatePostal() &&
       validateMail() &&
-      mailsMatches() &&
-      validatePhone()
+      mailsMatches()
       ) {
         confirm("Seguro que quieres enviar el formulario?");
         return true;
@@ -156,4 +188,6 @@ $(document).ready(() => {
 
     return true;
   }
+
+  
 });
