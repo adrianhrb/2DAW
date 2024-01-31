@@ -13,7 +13,10 @@ $(document).ready(() => {
   }
 
   $('#provincia').change((e) => {
-      console.log($("#provincias")[0].selectedIndex)
+    let index = document.getElementById('provincia').selectedIndex
+    let value = document.getElementById('provincia').options[index].value
+    $('#municipio').html('')
+    getTown(value)
   })
   
   function getTown(id){
@@ -26,8 +29,13 @@ $(document).ready(() => {
       }
       
       fetch('cargarMunicipiosJSON.php', data)
-      .then(response => response.text())
-      .then(data => console.log(data))
+      .then(response => response.json())
+      .then(data => {
+        Object.keys(data).forEach(mun => {
+          let newOption = $(`<option value=${mun}>${data[mun]}</option>`)
+          $('#municipio').append(newOption)
+        })
+      })
   }
   
   getProvinces()
@@ -40,7 +48,8 @@ $(document).ready(() => {
       validateAddress() &&
       validatePostal() &&
       validateMail() &&
-      mailsMatches()
+      mailsMatches() &&
+      validateConditions()
       ) {
         confirm("Seguro que quieres enviar el formulario?");
         return true;
@@ -187,6 +196,15 @@ $(document).ready(() => {
     }
 
     return true;
+  }
+
+  function validateConditions(){
+    if (!$('#condiciones').prop('checked')){
+      $("#errores").html("Debes aceptar las condiciones");
+      $('#condiciones').focus();
+      return false
+    }
+    return true
   }
 
   
