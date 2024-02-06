@@ -1,56 +1,67 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 140vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Fondo de la página */
-  }
-  
-  fieldset {
-    background: #66CCCC;
-    width: 550px;
-    border: thick solid #306;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-  }
-  
-  legend {
-    border: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #306;
-  }
-  
-  #errores {
-    background: red;
-    color: white;
-  }
-  
-  #intentos {
-    background: #CCFF33;
-    color: #306;
-  }
-  
-  .error {
-    border: solid 2px #FF0000;
-  }
-  
-  #limpiar, #enviar {
-    width: auto;
-    padding: 10px;
-    margin-right: 10px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150vh; /* Ajusté la altura para que ocupe la pantalla completa */
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambié la fuente */
+  background-color: #f0f0f0; /* Cambié el color de fondo */
+}
+
+fieldset {
+  background: #fff; /* Cambié el color de fondo del fieldset */
+  width: 400px; /* Reduje el ancho para que se vea más compacto */
+  border: 2px solid #3498db; /* Ajusté el grosor y el color del borde */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agregué una sombra */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Ajusté el margen inferior */
+  font-weight: bold; /* Hice el texto en negrita */
+}
+
+input, select {
+  width: calc(100% - 20px); /* Ajusté el ancho para considerar el padding */
+  padding: 10px; /* Ajusté el padding */
+  margin-bottom: 20px; /* Ajusté el margen inferior */
+  border: 1px solid #ccc; /* Añadí un borde más sutil */
+  border-radius: 5px; /* Añadí bordes redondeados */
+}
+
+legend {
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #3498db; /* Cambié el color del texto */
+  margin-bottom: 20px; /* Ajusté el margen inferior */
+}
+
+#error-message {
+  background: #e74c3c; /* Cambié el color de fondo */
+  color: #fff; /* Cambié el color del texto */
+  padding: 10px 20px; /* Ajusté el padding */
+  border-radius: 5px; /* Añadí bordes redondeados */
+  margin-bottom: 20px; /* Ajusté el margen inferior */
+}
+
+.error {
+  border-color: #e74c3c; /* Cambié el color del borde */
+}
+
+button {
+  width: 100%; /* Ajusté el ancho */
+  padding: 10px; /* Ajusté el padding */
+  background-color: #3498db; /* Cambié el color de fondo */
+  color: #fff; /* Cambié el color del texto */
+  border: none;
+  border-radius: 5px; /* Añadí bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Añadí una transición suave */
+}
+
+button:hover {
+  background-color: #2980b9; /* Cambié el color de fondo al pasar el mouse */
+}
