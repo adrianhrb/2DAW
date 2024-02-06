@@ -2,66 +2,66 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 150vh; /* Ajusté la altura para que ocupe la pantalla completa */
+  height: 150vh;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambié la fuente */
-  background-color: #f0f0f0; /* Cambié el color de fondo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: #f0f0f0;
 }
 
 fieldset {
-  background: #fff; /* Cambié el color de fondo del fieldset */
-  width: 400px; /* Reduje el ancho para que se vea más compacto */
-  border: 2px solid #3498db; /* Ajusté el grosor y el color del borde */
+  background: #fff; 
+  width: 400px; 
+  border: 2px solid #3498db; 
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agregué una sombra */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 label {
   display: block;
-  margin-bottom: 10px; /* Ajusté el margen inferior */
-  font-weight: bold; /* Hice el texto en negrita */
+  margin-bottom: 10px; 
+  font-weight: bold; 
 }
 
 input, select {
-  width: calc(100% - 20px); /* Ajusté el ancho para considerar el padding */
-  padding: 10px; /* Ajusté el padding */
-  margin-bottom: 20px; /* Ajusté el margen inferior */
-  border: 1px solid #ccc; /* Añadí un borde más sutil */
-  border-radius: 5px; /* Añadí bordes redondeados */
+  width: calc(100% - 20px); 
+  padding: 10px; 
+  margin-bottom: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
 }
 
 legend {
   border: none;
   font-size: 1.2em;
   font-weight: bold;
-  color: #3498db; /* Cambié el color del texto */
-  margin-bottom: 20px; /* Ajusté el margen inferior */
+  color: #3498db;
+  margin-bottom: 20px; 
 }
 
 #error-message {
-  background: #e74c3c; /* Cambié el color de fondo */
-  color: #fff; /* Cambié el color del texto */
-  padding: 10px 20px; /* Ajusté el padding */
-  border-radius: 5px; /* Añadí bordes redondeados */
-  margin-bottom: 20px; /* Ajusté el margen inferior */
+  background: #e74c3c; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  margin-bottom: 20px; 
 }
 
 .error {
-  border-color: #e74c3c; /* Cambié el color del borde */
+  border-color: #e74c3c; 
 }
 
 button {
-  width: 100%; /* Ajusté el ancho */
-  padding: 10px; /* Ajusté el padding */
-  background-color: #3498db; /* Cambié el color de fondo */
-  color: #fff; /* Cambié el color del texto */
+  width: 100%; 
+  padding: 10px; 
+  background-color: #3498db;
+  color: #fff;
   border: none;
-  border-radius: 5px; /* Añadí bordes redondeados */
+  border-radius: 5px; 
   cursor: pointer;
-  transition: background-color 0.3s; /* Añadí una transición suave */
+  transition: background-color 0.3s; 
 }
 
 button:hover {
-  background-color: #2980b9; /* Cambié el color de fondo al pasar el mouse */
+  background-color: #2980b9; 
 }
